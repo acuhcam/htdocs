@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>A君とB君が旅行代理店窓口で相談しています</p>
+    <p id="speeA1"></p>
+    <p>B君「もし足りなかったら国内旅行にしようよ」</p>
+    <!-- <br> -->
+    <p id="event1">店員「旅行先どうしますか？」</p>
+    <br>
+    <p id="speeA2"></p>
+    <p id="speeB1"></p>
+    <p id="shop"></p>
+
+
+
+    <script>
+    var standardMoney = 100000; //基準の金額
+    var moneyOfA = 10000;
+    var moneyOfB = 120000;
+    var speeA1 = document.getElementById("speeA1");
+    var event1 = document.getElementById("event1");
+    var speeA2 = document.getElementById("speeA2");
+    var speeB1 = document.getElementById("speeB1");
+
+    speeA1.innerHTML = "A君「お互いに" + standardMoney + "円以上持っていたら海外旅行に行こう」"
+
+    event1.addEventListener("click", function(){
+      speeA2.innerHTML = "A君「僕は" + moneyOfA + "円持ってるよ」";
+      speeB1.innerHTML = "B君「僕は" + moneyOfB + "円持ってるよ」" ;
+
+      if(moneyOfA > standardMoney && moneyOfB > standardMoney){
+        shop.innerHTML = "店員「では海外旅行のご案内を致します」";
+      } else {
+        shop.innerHTML = "店員「では国内旅行のご案内を致します」";
+      }
+    }, false);
+
+    </script>
+  </body>
+</html>

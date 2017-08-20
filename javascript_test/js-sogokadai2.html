@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>javascript基礎の総合課題2</title>
+</head>
+<body>
+  <h2>(2)formで入力された誕生日から現在の年齢を計算して表示する</h2>
+
+  <input type="text" id="year"/><label for="year">年</label>
+  <input type="text" id="month"><label for="month">月</label>
+  <input type="text" id="date"/><label for="date">日生まれ</label>
+  <br>
+  <input type="button" id="button" value="何歳？"/><br>
+  結果:
+
+
+  <script>
+
+  document.getElementById("button").addEventListener("click", function(){
+
+    //入力された年月日取得
+    var birthYear = Number(document.getElementById("year").value);
+    var birthMonth = Number(document.getElementById("month").value);
+    var birthDate = Number(document.getElementById("date").value);
+
+    //現時点での年月日取得
+    var now = new Date();
+    var nowYear = now.getFullYear();
+    var nowMonth = now.getMonth() + 1;
+    var nowDate = now.getDate();
+
+    //先月の末日
+    var lasMonLastDate = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+
+
+
+    //経過年
+    var elapsedYear = nowYear - birthYear;
+    // console.log(elapsedYear + "歳");
+
+    //経過月
+    var elapsedMonth = 0;
+
+    //経過日
+    var elapsedDate = 0;
+
+    // birthMonth <= nowMonth && birthDate <= nowDate 条件分岐
+
+    // 何ヶ月か
+    if (nowMonth <= birthMonth) {
+      if(nowDate < birthDate){
+        elapsedYear -= 1;
+      }
+      elapsedMonth = nowMonth + (12 - birthMonth - 1);
+      if(elapsedMonth > 11){
+        elapsedMonth -= 12;
+      }
+      console.log(1); //確認用
+    } else {
+      elapsedMonth = nowMonth - birthMonth - 1;
+      console.log(2); //確認用
+    }
+
+
+    // 何日か
+    if(lasMonLastDate - birthDate > 0) {
+      // console.log(3); //確認用
+      if(nowDate > birthDate){
+        elapsedDate = nowDate - birthDate;
+      } else {
+        console.log(lasMonLastDate - birthDate + nowDate + "日");
+        elapsedDate = lasMonLastDate - birthDate + nowDate;
+      }
+    } else {
+      // console.log(4); //確認用
+      console.log(nowDate + "日");
+      elapsedDate = nowDate;
+    }
+
+    document.body.appendChild(document.createElement("span")).textContent = "あなたは現時点で" + elapsedYear + "歳" + elapsedMonth + "ヶ月" + elapsedDate + "日です";
+
+
+
+  }, false);
+
+
+
+
+  </script>
+</body>
+</html>

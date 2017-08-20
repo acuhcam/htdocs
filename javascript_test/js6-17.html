@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script>
+
+
+    // function boxback(text1, text2){
+    //   return text1 + text2;
+    //   alert(11);
+    // }
+    //
+    // function zero(){
+    //   return;
+    //   alert(1111);
+    // }
+
+/*
+    function changeColor(id, color){
+      var x = document.getElementById(id);
+      if(x === null) return; // 処理を終了させるためのreturn文、よく使うらしい
+      x.style.color = color;
+    }
+*/
+    //
+    // var x = boxback("hello ", "World");
+    //
+    // console.log(x);
+    // console.log(zero());
+
+    var x = 5;
+    var y = 2;
+    var z = 3;
+
+    // function calcback(pan1, pan2){
+    //   return pan1 + pan2;
+    // }
+    //
+    // var answer1 = calcback(x, y);
+    //
+    // alert(answer1);
+    //
+    // var a = 2;
+    // var b = 2;
+    // var answer2 = calcback(a, b);
+    //
+    // alert(answer2);
+
+    function calcback(pan1, pan2, pan3) {
+
+      if(pan3 === 1)
+      {
+        answer_box = pan1 + pan2;
+      }
+      else if(pan3 === 2)
+      {
+        answer_box = pan1 - pan2;
+      }
+      else if(pan3 === 3)
+      {
+        answer_box = pan1 * pan2;
+      }
+      else if(pan3 === 4)
+      {
+        answer_box = pan1 / pan2;
+      }
+      else
+      {
+        answer_box = "計算できないよ";
+      }
+
+      return answer_box;
+
+    }
+
+    var answer = calcback(x, y, z);
+    alert(answer);
+
+    // 関数オブジェクトを動的に生成して、変数に格納する
+    var func_obj = function (argument1, argument2){
+      var v = argument1 + argument2;
+
+      return v;
+    }
+
+    var answer = func_obj(1, 2); //関数オブジェクトを実行して、結果を得る
+    alert(answer); // answerの値が出力される
+
+
+    </script>
+  </body>
+</html>

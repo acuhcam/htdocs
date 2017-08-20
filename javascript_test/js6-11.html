@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <p id="text1">引数あり、こんにちは〜〜</p>
+    <p id="text2">引数なし、こんにちは〜〜</p>
+
+    <script>
+
+      function hello(name) {
+        console.log("hello, " + name);
+      }
+
+      function addition(x) {
+        var y;
+        y = x + 1
+        console.log(y);
+      }
+
+      function AreaOfTriangle(width, height) {
+        var area;
+        area = (width * height) / 2;
+        console.log("底辺の長さが『" + width + "』、高さが『" + height + "』三角形の面積は『" + area + "』です");
+      }
+
+
+
+//同じ関数名で定義すると上書きされてしまう
+      function addition(x){
+          var y;
+          y = x + 1;
+          console.log(y);
+      }
+
+      function addition(x){ // こっちが優先されます
+          var y;
+          y = x + 2;
+          console.log(y);
+      }
+
+
+
+      //色変える、引数なし
+      function changeColor() {
+        document.getElementById("text2").style.color = "red";
+      }
+      //色変える、引数あり
+      function changeColor(id, font_color) {
+        document.getElementById(id).style.color = font_color;
+      }
+
+
+
+      // hello("akihiko");
+      // addition(10);
+      // AreaOfTriangle(10, 5);
+      changeColor();
+      changeColor("text1", "green");
+
+
+
+    </script>
+  </body>
+</html>

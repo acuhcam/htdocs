@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>3.if文の課題3</p>
+    <p id="shopPer"></p><br>
+    <p id="A"></p>
+    <p id="B"></p>
+    <p id="C"></p><br>
+    <p id="result"></p>
+
+
+
+    <script>
+    //課題3
+
+    var sum = 9000; //支払い合計
+    var moneyOfA = 20000;
+    var moneyOfB = 30000;
+    var moneyOfC = 40;
+
+    var moneyOfAll = moneyOfA + moneyOfB + moneyOfC; //三人の合計所持金額
+    var elem = document.getElementById("result");
+    var payPer = sum / 3; //割り勘時の一人当たり
+    var person1 = "";
+    var person2 = "";
+
+
+    function result1(person1) {
+      elem.innerHTML = person1 + "それ君「それじゃあ僕がおごるよ」";
+    };
+
+    function result2(person1, person2){
+      elem.innerHTML = person1 + "君" + person2 + "君「それじゃあ僕たちがおごるよ」";
+    };
+
+
+    document.getElementById("shopPer").innerHTML ="お店の人「お会計は" + sum + "円です」";
+
+    document.getElementById("shopPer").addEventListener("click", function(){
+      document.getElementById("A").innerHTML = "A君「僕は社会人2年目なので" + moneyOfA + "円持ってるよ」";
+      document.getElementById("B").innerHTML = "B君「僕は会社が成功したので" + moneyOfB + "円持ってるよ」";
+      document.getElementById("C").innerHTML = "C君「僕は競馬で外れてしまったので" + moneyOfC + "円持ってるよ」";
+
+      if (sum > moneyOfAll) {
+        elem.innerHTML = "全員「お金足りないね…」";
+      } else if (payPer > 3000){
+        elem.innerHTML = "全員「割り勘だね」";
+      } else if (moneyOfA == moneyOfB && moneyOfA == moneyOfC){
+        elem.innerHTML = "全員「割り勘だね」";
+      } else {
+        if (moneyOfA == moneyOfB && moneyOfA > moneyOfC) {
+          result2("A", "B");
+        } else if (moneyOfB == moneyOfC && moneyOfB > moneyOfA) {
+          result2("B", "C");
+        } else if (moneyOfC == moneyOfA && moneyOfC > moneyOfB) {
+          result2("C", "A");
+        } else if (moneyOfA > moneyOfB) {
+          if (moneyOfA > moneyOfC){result1("A");}
+        } else if(moneyOfB > moneyOfC){
+          if (moneyOfB > moneyOfA) {result1("B");}
+        } else if (moneyOfC > moneyOfA){
+          if (moneyOfC > moneyOfB) {result1("C");}
+        }
+      }
+
+
+    }, false);
+
+
+    </script>
+  </body>
+</html>

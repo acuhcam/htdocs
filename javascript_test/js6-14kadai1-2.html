@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>6-14課題</title>
+</head>
+<body>
+
+  <p>1.if文課題1</p>
+  <h2>問題</h2>
+  <p>日本の首都は？</p>
+  <ol>
+    <li id="answer1">札幌</li>
+    <li id="answer2">東京</li>
+    <li id="answer3">大阪</li>
+  </ol>
+
+  <hr>
+
+  <p>2.if文の課題2</p>
+  <p id="shopPer"></p><br>
+  <p id="A"></p>
+  <p id="B"></p><br>
+  <p id="result"></p>
+
+
+
+
+  <script>
+
+  //課題1
+  var answer1 = document.getElementById("answer1")
+  var answer2 = document.getElementById("answer2")
+  var answer3 = document.getElementById("answer3")
+  // alert(answer1.firstChild.nodeValue);
+  // alert(answer1.innerHTML = "aa");
+  answer1.addEventListener("click", function(){
+    if (answer1){
+      answer1.innerHTML = "不正解";
+      answer1.style.color = "red";
+    }
+  });
+
+  answer2.addEventListener("click", function(){
+    if (answer2){
+      answer2.innerHTML = "正解";
+      answer2.style.color = "yellow";
+    }
+  });
+  answer3.addEventListener("click", function(){
+    if (answer3){
+      answer3.innerHTML = "不正解";
+      answer3.style.color = "red";
+    }
+  });
+
+  // ---------------------------------------------------
+  //課題2
+
+  var sum = 20;
+  var moneyOfA = 150000;
+  var moneyOfB = 12000;
+  var person1 = "A";
+  var elem = document.getElementById("result");
+
+
+  document.getElementById("shopPer").innerHTML ="お店の人「お会計は" + sum + "円です」";
+  document.getElementById("shopPer").addEventListener("click", function(){
+    document.getElementById("A").innerHTML = "A君「僕は" + moneyOfA + "円持ってるよ」";
+      console.log(moneyOfA);
+    document.getElementById("B").innerHTML = "B君「僕は" + moneyOfB + "円持ってるよ」";
+
+    if(moneyOfA < sum && moneyOfB < sum){
+      elem.innerHTML = "お金足りないね";
+
+      //どっちかは会計よりも多く持っているので以下の分岐
+    } else if(moneyOfA > moneyOfB) {
+      person = "A";
+      elem.innerHTML = person + "君「じゃあ僕がおごるよ！」";
+    } else if(moneyOfA < moneyOfB){
+      person = "B";
+      elem.innerHTML = person + "君「じゃあ僕がおごるよ！」";
+    }
+
+  }, false);
+
+
+
+  </script>
+</body>
+</html>

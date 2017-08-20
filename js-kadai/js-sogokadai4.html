@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>javascript基礎の総合課題4</title>
+</head>
+<body>
+
+  <form name="form1">
+    <p>フォーカスが外れたらチェック</p>
+    <p>アラートでエラー表示</p>
+
+
+    <p>・ユーザー名を入力してください<br />※半角英数のみ6文字以上32文字以内</p>
+    <p id="input1"><input type="text" id="username"/></p>
+
+    <p>・パスワードを入力してください<br />※半角英数のみ8文字以上</p>
+    <p id="input2"><input type="password" id="password1" onblur="console.log('2')"/></p>
+
+    <p>・パスワードを入力してください(確認用)<br />※半角英数のみ8文字以上</p>
+    <p id="input3"><input type="password" id="password2" onblur="console.log('3')"/></p>
+
+    <p>・メールアドレスを入力してください</p>
+    <p id="input4"><input type="text" id="email1"/>@<input type="text" id="email2" onblur="console.log('4')"/></p>
+
+    <p>・電話番号</p>
+    <p>([1~2桁] - [3~4桁] - [4桁])で入力してください</p>
+    <p id="input5"><input type="text" id="tel1"/>-<input type="text" id="tel2"/>-<input type="text" id="tel3" onblur="console.log('5')"/></p>
+
+    <p id="input6">・性別</p>
+    <div id="radio1">
+      <input type="radio" id="man" name="gender" value="男性" checked/><label for="man">男</label>
+      <input type="radio" id="woman" name="gender" value="女性"/><label for="woman">女</label>
+    </div>
+
+    <p id="input7">・お住まい</p>
+    都道府県
+    <select name="pref_name">
+      <option value="北海道">北海道</option>
+      <option value="青森県">青森県</option>
+      <option value="岩手県">岩手県</option>
+      <option value="宮城県">宮城県</option>
+      <option value="秋田県">秋田県</option>
+      <option value="山形県">山形県</option>
+      <option value="福島県">福島県</option>
+      <option value="茨城県">茨城県</option>
+      <option value="栃木県">栃木県</option>
+      <option value="群馬県">群馬県</option>
+      <option value="埼玉県">埼玉県</option>
+      <option value="千葉県">千葉県</option>
+      <option value="東京都">東京都</option>
+      <option value="神奈川県">神奈川県</option>
+      <option value="新潟県">新潟県</option>
+      <option value="富山県">富山県</option>
+      <option value="石川県">石川県</option>
+      <option value="福井県">福井県</option>
+      <option value="山梨県">山梨県</option>
+      <option value="長野県">長野県</option>
+      <option value="岐阜県">岐阜県</option>
+      <option value="静岡県">静岡県</option>
+      <option value="愛知県">愛知県</option>
+      <option value="三重県">三重県</option>
+      <option value="滋賀県">滋賀県</option>
+      <option value="京都府">京都府</option>
+      <option value="大阪府">大阪府</option>
+      <option value="兵庫県">兵庫県</option>
+      <option value="奈良県">奈良県</option>
+      <option value="和歌山県">和歌山県</option>
+      <option value="鳥取県">鳥取県</option>
+      <option value="島根県">島根県</option>
+      <option value="岡山県">岡山県</option>
+      <option value="広島県">広島県</option>
+      <option value="山口県">山口県</option>
+      <option value="徳島県">徳島県</option>
+      <option value="香川県">香川県</option>
+      <option value="愛媛県">愛媛県</option>
+      <option value="高知県">高知県</option>
+      <option value="福岡県">福岡県</option>
+      <option value="佐賀県">佐賀県</option>
+      <option value="長崎県">長崎県</option>
+      <option value="熊本県">熊本県</option>
+      <option value="大分県">大分県</option>
+      <option value="宮崎県">宮崎県</option>
+      <option value="鹿児島県">鹿児島県</option>
+      <option value="沖縄県">沖縄県</option>
+    </select>
+
+    <p><input type="button" id="button" value="登録"/></p>
+
+    <p>入力内容確認</p>
+    <p>・ユーザー名：<span id="conf_username"></span></p>
+    <p>・パスワード：<span id="conf_password"></span></p>
+    <p>・メールアドレス：<span id="conf_email"></span></p>
+    <p>・電話番号：<span  id="conf_tel"></span></p>
+    <p>・性別：<span id="conf_gender"></span></p>
+    <p>・お住まい：<span id="conf_pref_name"></span></p>
+
+
+    入力がＯＫなら入力内容確認の箇所に入力内容を表示する
+    間違っていたら何処が間違っているのかを指摘してアラートでエラー表示
+
+
+
+  </form>
+
+
+  <script>
+
+  //入力用
+  var username = document.getElementById("username");
+  var password1 = document.getElementById("password1");
+  var password2 = document.getElementById("password2");
+  var email1 = document.getElementById("email1");
+  var email2 = document.getElementById("email2");
+  var tel1 = document.getElementById("tel1");
+  var tel2 = document.getElementById("tel2");
+  var tel3 = document.getElementById("tel3");
+  var genderCount = document.getElementsByName("gender").length;// 男女ボタン要素数
+  var pref_nameCount = document.form1.pref_name.childElementCount; //都道府県ボタン要素数
+  var button = document.getElementById("button");
+
+  //内容確認用
+  var conf_username = document.getElementById("conf_username");
+  var conf_password = document.getElementById("conf_password");
+  var conf_email = document.getElementById("conf_email");
+  var conf_tel = document.getElementById("conf_tel");
+  var conf_gender = document.getElementById("conf_gender");
+  var conf_pref_name = document.getElementById("conf_pref_name");
+  var conf_button = document.getElementById("conf_button");
+
+
+
+  //フォーカスが外れた時のチェック用
+  username.addEventListener("blur", function(){
+    if(username.value.length < 6 || 32 < username.value.length ) {
+      alert("ユーザー名は6文字以上32文字以内で入力してください");
+    } else if(!username.value.match(/^[0-9a-zA-Z]+$/)){
+      alert("ユーザー名は半角英数で入力してください")
+    } else {
+      conf_username.appendChild(document.createElement("span")).textContent =    username.value;
+    }
+  }, false);
+
+  password1.addEventListener("blur", function(){
+    if(password1.value.length < 8){
+      alert("パスワードは8文字以下で入力してください");
+    } else if(password1.value.match(/[^0-9A-Za-z]/)){
+      alert("パスワードは半角英数で入力してください")
+    }
+  }, false);
+
+  password2.addEventListener("blur", function(){
+    if(password1.value != password2.value){
+      alert("確認のため同じパスワードを入力してください");
+    } else if(password1.value.length < 8){
+      alert("パスワードは8文字以下で入力してください");
+    } else if(password1.value.match(/[^0-9A-Za-z]/)){
+      alert("パスワードは半角英数で入力してください");
+    }
+  }, false);
+
+  email1.addEventListener("blur", function(){
+    if(!email1.value.match(/^[a-zA-Z0-9!$&amp;*.=^`|~#%'+\/?_{}-]+$/)){
+      alert("メールアドレスは正しく入力してください");
+    }
+  }, false);
+
+  email2.addEventListener("blur", function(){
+    if (!email2.value.match(/^[a-zA-Z0-9!$&amp;*.=^`|~#%'+\/?_{}-]+$/)){
+      alert("メールアドレスは正しく入力してください");
+    }
+  }, false);
+
+  tel1.addEventListener("blur", function(){
+    if(!tel1.value.match(/\d{1,2}/)){
+      alert("電話番号は正しく入力してください");
+    }
+  }, false);
+
+  tel2.addEventListener("blur", function(){
+    if(!tel2.value.match(/\d{3,4}/)){
+      alert("電話番号は正しく入力してください");
+    }
+  }, false);
+
+  tel3.addEventListener("blur", function(){
+    if(!tel3.value.match(/\d{4}/)){
+      alert("電話番号は正しく入力してください");
+    }
+  }, false);
+
+
+
+
+  // ------------ボタン押す前確認用------------------------
+  console.log("----ボタン押す前----");
+  //radioボタンの要素数取得
+  console.log(document.form1.gender.value);
+
+  //selectボタン
+  console.log(document.form1.pref_name.value);
+  // -------------------------------------
+
+
+
+  //登録ボタンを押してからの内容確認用
+  button.addEventListener("click", function(){
+
+    //登録ボタンで一度全項目を初期化する
+    document.getElementById("conf_username").textContent = null;
+    document.getElementById("conf_password").textContent = null;
+    document.getElementById("conf_email").textContent = null;
+    document.getElementById("conf_tel").textContent = null;
+    document.getElementById("conf_gender").textContent = null;
+    document.getElementById("conf_pref_name").textContent = null;
+
+    function pointing(elem){
+      elem.innerHTML = "正しく入力してください";
+      elem.style.color = "red";
+    }
+
+    //usernameの正規表現
+    if(username.value.length < 6 || 32 < username.value.length ) {
+      alert("ユーザー名は6文字以上32文字以内で入力してください");
+      pointing(conf_username);
+    } else if(!username.value.match(/^[0-9a-zA-Z]+$/)){
+      alert("ユーザー名は半角英数で入力してください");
+      pointing(username);
+    } else {
+      conf_username.textContent = username.value;
+    }
+
+
+    //パスワード用の正規表現
+    // console.log(password1.value);
+    // console.log(password2.value);
+    if(password1.value != password2.value){
+      alert("確認のため同じパスワードを入力してください");
+      pointing(conf_password);
+    } else if(password1.value.length < 8){
+      alert("パスワードは8文字以下で入力してください");
+      pointing(conf_password);
+    } else if(password1.value.match(/[^0-9A-Za-z]/)){
+      alert("パスワードは半角英数で入力してください");
+      pointing(conf_password);
+    } else {
+      conf_password.textContent = password1.value;
+    }
+
+
+    //メールアドレス用の正規表現
+    if(!email1.value.match(/^[a-zA-Z0-9!$&amp;*.=^`|~#%'+\/?_{}-]+$/)){
+      alert("メールアドレスは正しく入力してください");
+      pointing(conf_email);
+    } else if (!email2.value.match(/^[a-zA-Z0-9!$&amp;*.=^`|~#%'+\/?_{}-]+$/)){
+      alert("メールアドレスは正しく入力してください");
+      pointing(conf_email);
+    } else {
+      conf_email.textContent = email1.value + "@" + email2.value;
+    }
+
+
+    //電話番号用の正規表現
+    if(!tel1.value.match(/\d{1,2}/)){
+      alert("電話番号は正しく入力してください");
+      pointing(conf_tel);
+    } else if(!tel2.value.match(/\d{3,4}/)){
+      alert("電話番号は正しく入力してください");
+      pointing(conf_tel);
+    } else if(!tel3.value.match(/\d{4}/)){
+      alert("電話番号は正しく入力してください");
+      pointing(conf_tel);
+    } else {
+      conf_tel.textContent = tel1.value + " - " + tel2.value + " - " + tel3.value;
+    }
+
+    //性別
+    var ansOfGend = document.form1.gender.value;  //回答用
+    conf_gender.textContent = ansOfGend;
+
+    //お住まい
+    var ansOfPref = document.form1.pref_name.value;
+    conf_pref_name.textContent = ansOfPref;
+
+
+// .appendChild(document.createElement("span"))
+
+  }, false);
+
+
+
+
+  </script>
+</body>
+</html>

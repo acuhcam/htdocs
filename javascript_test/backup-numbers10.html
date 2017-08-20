@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>javascript基礎の総合課題5-1</title>
+  </head>
+  <body>
+    <h2>(5)(6)(7)ナンバーズ10</h2>
+    <p>0から9の数値を入力してください</p>
+    <input type="text" id="input1" size="4"/>
+    <input type="text" id="input2" size="4"/>
+    <input type="text" id="input3" size="4"/>
+    <input type="text" id="input4" size="4"/>
+    <input type="text" id="input5" size="4"/><br />
+    <input type="text" id="input6" size="4"/>
+    <input type="text" id="input7" size="4"/>
+    <input type="text" id="input8" size="4"/>
+    <input type="text" id="input9" size="4"/>
+    <input type="text" id="input10" size="4"/><br>
+    <br>
+
+    <input type="button" id="button" value="当たっているかな"/><br>
+    <br>
+    <br>
+
+    <p>USER : <span id="showUser"></span></p>
+    <p>COM : <span id="showCom"></span></p>
+    <p>当選結果 : <span id="result"></span></p>
+    <br>
+    <h3 id="prob">-- 当選回数, 確率（1000回試行）--</h3>
+    <p id="straight">ストレート  ---------- </p>
+    <p id="box">ボックス  ------------- </p>
+    <p id="lose">ハズレ --------------- </p>
+
+    <script>
+
+var count = 1;
+
+    document.getElementById("button").addEventListener("click", function(){
+      //user側入力数字
+      var input1 = Number(document.getElementById("input1").value);
+      var input2 = Number(document.getElementById("input2").value);
+      var input3 = Number(document.getElementById("input3").value);
+      var input4 = Number(document.getElementById("input4").value);
+      var input5 = Number(document.getElementById("input5").value);
+      var input6 = Number(document.getElementById("input6").value);
+      var input7 = Number(document.getElementById("input7").value);
+      var input8 = Number(document.getElementById("input8").value);
+      var input9 = Number(document.getElementById("input9").value);
+      var input10 = Number(document.getElementById("input10").value);
+      var user = [input1, input2, input3, input4, input5, input6, input7, input8, input9, input10];
+
+      var bool = true;
+      while (bool) {
+        count++;
+
+      //コンピュータ側ランダム数字
+      var com = [];
+      for(var i = 0; i < 10; i++){
+        com[i] = Math.floor(Math.random() *10);
+      }
+
+      //選択数字の表示
+      var naturalUser = document.getElementById("showUser");
+        naturalUser.textContent = user;
+      var naturalCom = document.getElementById("showCom");
+        naturalCom.textContent = com;
+
+      //選択数字コンソール確認用
+      console.log("-------確認---------");
+      console.log(naturalUser);
+      console.log(naturalCom);
+
+
+      var result = document.getElementById("result");
+      var flag = 0; //ストレート判定用flag
+      //ストレート用の配列比較
+      for(var i = 0; i < user.length; i++){
+          if(user[i] == com[i]){
+            flag += 1;
+          }
+      }
+
+
+      //ボックスorハズレ用に、昇順配列、小さい順に並べ直した
+      //ストレートがfalseの時に使用する配列
+      var user2 = user.sort(function(a,b){
+        if(a < b) return -1;
+        if(a > b) return 1;
+        return 0;
+      });
+      var com2 = com.sort(function(a,b){
+        if(a < b) return -1;
+        if(a > b) return 1;
+        return 0;
+      });
+
+      console.log(user);
+      console.log(com);
+
+
+      //flagに加算された数、配列の要素数が等しい時
+      if(flag == user.length){
+        result.textContent = "ストレート";
+        //以下確認用
+        alert("ストレート！！")
+        console.log("ストレート");
+        console.log("user : " + naturalUser.textContent);
+        console.log("com : " + naturalCom.textContent);
+        console.log("-----------------------");
+
+
+        break;
+      } else { //ボックス判定開始
+        var flag2 = 0; //ボックス判定用flags
+        for(var i = 0; i < user2.length; i++){
+            if(user2[i] == com2[i]){
+              flag2 += 1;
+            }
+        }
+        console.log("flag2は : " + flag2);
+        if(flag2 == 10){
+          result.textContent = "ボックス";
+          //以下確認用
+          alert("ボックス")
+          console.log("ボックス");
+          console.log("user : " + naturalUser.textContent);
+          console.log("com : " + naturalCom.textContent);
+          console.log("-----------------------");
+
+          break;
+        } else {
+          result.textContent = "ハズレ";
+        }
+      }
+console.log(count + "回目");
+};
+
+    }, false);
+
+
+    </script>
+  </body>
+</html>

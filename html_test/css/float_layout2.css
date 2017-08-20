@@ -1,0 +1,32 @@
+body {
+
+}
+
+#wrap {
+  width: 780px;
+  margin: 0 auto;
+  background-color: #eed5c4;
+}
+
+#inner {
+  margin: 10px;
+}
+
+#leftWrap {
+  width: 500px;
+  float:left;
+}
+
+#rightWrap {
+  width: 250px;
+  float: right;
+}
+
+
+.clear {
+  clear: both;
+}
+
+.clear hr {
+  display: none;
+}

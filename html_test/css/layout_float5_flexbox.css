@@ -1,0 +1,99 @@
+
+#wrap {
+  width: 780px;
+  margin: 0 auto;
+  border: solid 1px black;
+  background-color: #c4dbee;
+}
+
+#inner {
+  margin: 10px;
+}
+
+#header {
+  border: solid 1px black;
+  background-color: green;
+  margin: 10px 0px;
+}
+
+
+#largeWrap {
+  width: 760px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+#rightWrap {
+  width: 500px;
+  background-color: red;
+}
+
+
+#leftWrap {
+  border: solid 1px black;
+  width: 250px;
+  background-color: green;
+}
+
+.firstWrap {
+  border: solid 1px black;
+  background-color: green;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.box1 {
+  width: 102.5px;
+  margin: 10px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+.secondWrap {
+  border: solid 1px black;
+  background-color: green;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.box2 {
+  border: solid 1px black;
+  width: 144px;
+  margin: 10px;
+  background-color: white;
+}
+
+.thirdWrap {
+  border: solid 1px black;
+  background-color: green;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.box3 {
+  border: solid 1px black;
+  width: 227px;
+  margin: 10px;
+  background-color: white;
+}
+
+.forthWrap {
+  border: solid 1px black;
+  background-color: green;
+  display: flex;
+}
+
+.box4 {
+  border: solid 1px black;
+  width: 61px;
+  margin: 10px;
+  background-color: white;
+}
+
+
+#footer {
+  border: solid 1px black;
+  margin: 10px 0px;
+  background-color: green;
+}

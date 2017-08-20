@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>javascript基礎の総合課題8</title>
+  </head>
+  <body>
+    <h3>(8) ポーカーゲームを作る</h3>
+
+
+    <script>
+/* 『名前 : {数字, 柄, 画像URL}』の情報を持つ大きな連想配列を作る。
+乱数で親と子の数字を決めたのち、連想配列を参照して値を取り出す。
+*/
+
+    //親と子の仮の配列
+    var tempOya = [];
+    var tempKodomo =[];
+
+    //親と子の数字配列
+    var oyaNum = [];
+    var kodomoNum = [];
+
+    //親と子の柄の配列
+    var oyaSuit = [];
+    var kodomoSuit = [];
+
+    //柄の配列
+    var suit = {1:"club", 2:"diamond", 3:"heart", 4:"spade"};
+
+    //仮の配列4つ
+    //連想配列の{}にしないことで、s1~c13を添え字でアクセスできる？
+    //一方で、連結して一つの配列にした際は、{}にしておいた方がいいのか？
+    var tempArray1 = []; //spade
+    var tempArray2 = []; //heart
+    var tempArray3 = []; //diamond
+    var tempArray4 = []; //club
+
+    //仮配列にそれぞれ1〜13を連想配列で入れる //関数化できそう
+    for(var i = 0; i < 13; i++){
+      tempArray1["c" + (i+1)] = i;
+    }
+    for(var i = 0; i < 13; i++){
+      tempArray2["d" + (i+1)] = i;
+    }
+    for(var i = 0; i < 13; i++){
+      tempArray3["h" + (i+1)] = i;
+    }
+    for(var i = 0; i < 13; i++){
+      tempArray4["s" + (i+1)] = i;
+    }
+
+
+console.log("--------------------------------------");
+
+
+    //s1~c13入っている仮array四つに対して、s1~c13に対して3つの組みを持つ連想配列をつくる
+    for(var i = 0; i < 13; i++){ //関数化できそう
+
+        tempArray1["c" + (i+1)] = {num : (i+1), suitOfTru : suit[1], image :"./images/trump/c"+(i+1) + ".png" } ;
+
+        tempArray2["d" + (i+1)] = {num : (i+1), suitOfTru : suit[2], image :"./images/trump/d"+(i+1) + ".png" } ;
+
+        tempArray3["h" + (i+1)] = {num : (i+1), suitOfTru : suit[3], image :"./images/trump/h"+(i+1) + ".png" } ;
+
+        tempArray4["s" + (i+1)] = {num : (i+1), suitOfTru : suit[4], image :"./images/trump/s"+(i+1) + ".png" } ;
+
+    }
+    // 仮配列が連想配列になっているかどうか確認
+    // console.log(tempArray1);
+    // console.log(tempArray2);
+    // console.log(tempArray3);
+    // console.log(tempArray4);
+
+
+    //------------配列同士の連結をしたい--------------
+
+    //これは連想配列部分がなくなってしまった
+    // var y = tempArray3.concat(tempArray4);
+    // console.log(y);
+
+    //連想配列を結合して、一つにする
+    var allTrumpArray = Object.assign(tempArray1, tempArray2, tempArray3, tempArray4);
+    console.log("全要素の連想配列↓");
+    console.log(allTrumpArray);
+
+    //連想配列にランダムアクセスするためには、添え字のようなものを取得したいが、lengthは連想配列には使えないので、別な方法が必要
+
+
+    //全要素が入っているallTrumpArray連想配列から、keyを取得してallNameArrayを作る
+    var allNameArray = []; //全要素の名前が集合してる配列
+    for(key in allTrumpArray){
+      allNameArray.push(key);
+    }
+
+    //---------------------------------------
+    //-------確認用--------------------------
+    console.log("全要素の名前の配列↓");
+    console.log("allNameArray");
+    console.log(allNameArray);
+    //---------------------------------------
+
+    console.log("=========================================");
+
+    //ランダムで親子配列に数字代入する
+    for(var i = 0; i < 5; i++){
+      var rand1 = Math.floor(Math.random() * 52); //子供用ランダム
+      tempKodomo.push(allNameArray[rand1]);
+      var rand2 = Math.floor(Math.random() * 52); //大人用ランダム
+      tempOya.push(allNameArray[rand2])
+    }
+
+    //---親と子にランダムではいっているか---
+    console.log(tempKodomo);
+    console.log(tempOya);
+
+console.log("^^^^^^^^^^^^^^^^^");
+    //親子のランダムから、連想配列の数字と柄にアクセス
+    for(var i in tempKodomo){
+      kodomoNum.push(allTrumpArray[tempKodomo[i]]["num"]);
+      kodomoSuit.push(allTrumpArray[tempKodomo[i]]["suitOfTru"]);
+    }
+    for(var i in tempOya){
+      oyaNum.push(allTrumpArray[tempOya[i]]["num"]);
+      oyaSuit.push(allTrumpArray[tempOya[i]]["suitOfTru"]);
+    }
+
+    //sort()を拡張して昇順にできるようにした //デフォルトsort()ではうまくいかなかった
+    kodomoNum = kodomoNum.sort(function(a, b){
+      return a - b;
+    });
+    oyaNum = oyaNum.sort(function(a, b){
+      return a - b;
+    });
+
+    //----ソート確認用-------------------
+    console.log("--- 親 ---");
+    console.log("数字 " + kodomoNum);
+    console.log("柄 " + kodomoSuit);
+    console.log("---- 子 ----");
+    console.log("数字 " + oyaNum);
+    console.log("柄 " + oyaSuit);
+    //-----------------------------------
+
+    // for(var i = 0; i < 5; i++){
+    //   oyaNum.push(allTrumpArray[])
+    // }
+
+
+    for(var i in tempOya){
+      oyaNum.push(allTrumpArray[tempOya[i]]["suit"]);
+      console.log();
+    }
+
+
+    //------------カードの結果判定------------
+
+
+//-----  重複なしに作ったけど、一つにできたやつ  ------------------------
+
+
+  //重複なしの親の配列をつくる
+  var num1 = 1;
+  var array1 = []; //重複無しを判定するための配列 //余裕があればこの配列無しに改変したい
+  while(num1 < 6){
+    var rand = Math.floor(Math.random() * 52);
+    var flag = array1.indexOf(allNumArray[rand]); //重複ないか判定フラグ0 or -1
+    if(flag <= -1){
+      array1.push(allNumArray[rand])
+      tempOya.push(allNameArray[rand]);
+      num1++;
+    } else {
+      continue;
+    }
+  }
+
+  //重複なしの子の配列をつくる
+  var num2 = 1;
+  var array2 = []; //重複無しを判定するための配列 //余裕があればこの配列無しに改変したい
+  while(num2 < 6){
+    var rand = Math.floor(Math.random() * 52);
+    console.log(rand);
+    var flag = array2.indexOf(allNumArray[rand]); //重複ないか判定フラグ0 or -1
+    if(flag <= -1){
+      array2.push(allNumArray[rand])
+      tempKodomo.push(allNameArray[rand]);
+      num2++;
+    } else {
+      continue;
+    }
+  }
+
+
+
+  //親子のランダムから、連想配列の数字と柄にアクセス
+  for(var i in tempKodomo){
+    kodomoNum.push(allTrumpArray[tempKodomo[i]]["num"]);
+    kodomoSuit.push(allTrumpArray[tempKodomo[i]]["suitOfTru"]);
+  }
+  for(var i in tempOya){
+    oyaNum.push(allTrumpArray[tempOya[i]]["num"]);
+    oyaSuit.push(allTrumpArray[tempOya[i]]["suitOfTru"]);
+  }
+
+
+// 8/10
+for(var k = 0; k < numArray.length; k++){
+  if(k == 0){  // 初回が0の時
+    if(numArray[k] == val){num1 += 1;}
+    else {flag = false;}
+    // console.log("if(k == 0)" + num1 + " -- " + num2);
+  } else if(numArray[k] == val) {
+    if(flag){num1 += 1;}
+    else {num2 += 1;}
+    // console.log("else if(numArray[k] == val)" + num1 + " -- " + num2);
+  } else {
+    flag = false;
+    // console.log("else" + num1 + " -- " + num2);
+  }
+}
+
+if(num1 == 3 || num2 == 3){
+  result = "フォーカード";
+} else if(num1 == 2 || num2 == 2){
+  if(num1 == 0 || num2 == 0){
+    result = "スリーオブアカインド";
+  }
+  result = "フルハウス"
+} else if(num1 == 1 || num2 ==1){
+  if(num1 == 1 && num == 1){
+    result = "ツーペア";
+  } else {
+    result = "ワンペア";
+  }
+} else {
+  result = "ハイカード";
+}
+console.log("num1" + num1);
+console.log("num2" + num2);
+
+
+
+
+//  ------ 8/14 -----
+var high = [];
+
+/* 『名前 : {num: 数字, suit: 柄, image: 画像URL}』の情報を持つ大きな連想配列を作る。
+乱数で親と子の数字を決めたのち、連想配列を参照して値を取り出す。
+*/
+
+// for(var m = 0; m < 1000; m++){ //確認 for文
+
+//数字配列
+var allNumArray = [];
+for(var i =0; i < 52; i++){
+  allNumArray.push(i + 1);
+}
+// console.log(allNumArray);
+
+//親と子の仮の配列
+var tempOya = [];
+var tempKodomo =[];
+var temps = [tempOya, tempKodomo] //親と子
+
+//親と子の数字保存配列
+var oyaNum = [];
+var kodomoNum = [];
+var numOfP = [oyaNum, kodomoNum] //親と子
+
+//親と子の柄保存配列
+var oyaSuit = [];
+var kodomoSuit = [];
+var suitsOfP = [oyaSuit, kodomoSuit] //親と子
+
+//柄の配列
+var suits = {1:"club", 2:"diamond", 3:"heart", 4:"spade"};
+
+//仮の配列4つ
+//連想配列の{}にしないことで、s1~c13を添え字でアクセスできる？
+//一方で、連結して一つの配列にした際は、{}にしておいた方がいいのか？
+var tempArray1 = []; //spade
+var tempArray2 = []; //heart
+var tempArray3 = []; //diamond
+var tempArray4 = []; //club
+
+//仮配列にそれぞれ1〜13を連想配列で入れる //関数化できそう
+for(var i = 0; i < 13; i++){
+  tempArray1["c" + (i+1)] = i;
+}
+for(var i = 0; i < 13; i++){
+  tempArray2["d" + (i+1)] = i;
+}
+for(var i = 0; i < 13; i++){
+  tempArray3["h" + (i+1)] = i;
+}
+for(var i = 0; i < 13; i++){
+  tempArray4["s" + (i+1)] = i;
+}
+
+
+
+
+//s1~c13入っている仮array四つに対して、s1~c13に対して3つの要素を持つ連想配列をつくる
+for(var i = 0; i < 13; i++){ //関数化できそう
+
+  tempArray1["c" + (i+1)] = {num : (i+1), suitOfTru : suits[1], image :"./images/trump/c"+(i+1) + ".png" } ;
+
+  tempArray2["d" + (i+1)] = {num : (i+1), suitOfTru : suits[2], image :"./images/trump/d"+(i+1) + ".png" } ;
+
+  tempArray3["h" + (i+1)] = {num : (i+1), suitOfTru : suits[3], image :"./images/trump/h"+(i+1) + ".png" } ;
+
+  tempArray4["s" + (i+1)] = {num : (i+1), suitOfTru : suits[4], image :"./images/trump/s"+(i+1) + ".png" } ;
+
+}
+
+//------------連想配列同士を結合して大もと連想配列をつくる--------------
+
+//これは連想配列部分がなくなってしまったので失敗
+// var y = tempArray3.concat(tempArray4);
+// console.log(y);
+
+//連想配列を結合して、一つの大もと連想配列をつくる
+var allTrumpArray = Object.assign(tempArray1, tempArray2, tempArray3, tempArray4);
+
+
+//全要素が入っているallTrumpArray連想配列から、keyを取得してallNameArrayを作る
+var allNameArray = []; //全要素の名前が集合してる配列
+for(key in allTrumpArray){
+  allNameArray.push(key);
+}
+
+//-------------------------------------------------------------
+//-------確認用------------------------------------------------
+// console.log("====== 基本となる配列の確認 ======");
+// console.log("--- 全要素の連想配列 ----");
+// console.log("allTrumpArray");
+// console.log(allTrumpArray);
+// console.log("--- 全要素の名前の配列 ---");
+// console.log("allNameArray");
+// console.log(allNameArray);
+// console.log("");
+//-------------------------------------------------------------
+
+
+//重複なしの親と子の配列をつくる
+for(var i = 0; i < 2; i++){
+  var num = 1;
+  var array = []; //重複無しを判定するための配列 //余裕があればこの配列無しに改変したい
+  while(num < 6){
+    var rand = Math.floor(Math.random() * 52);
+    // console.log(rand);
+    var flag = array.indexOf(allNumArray[rand]); //重複ないか判定フラグ0 or -1
+    if(flag <= -1){
+      array.push(allNumArray[rand])
+      temps[i].push(allNameArray[rand]);
+      num++;
+    } else {
+      continue;
+    }
+  }
+}
+
+
+
+//----------------------------------------------------
+//------親と子にランダムではいっているか---------------
+// console.log("====== 親子で共ににランダムで入っているか ======");
+// console.log("--- 親 ---");
+// console.log(tempOya);
+// console.log("--- 子 ---");
+// console.log(tempKodomo);
+// console.log("");
+//-----------------------------------------------------
+
+
+/*
+親と子のランダム数字配列から、連想配列の数字と柄にアクセスして、
+各数字保存配列, 柄保存配列に代入する
+*/
+for(var i = 0; i < 2; i++){
+  for(var k in temps[i]){
+    numOfP[i].push(allTrumpArray[temps[i][k]]["num"]);
+    suitsOfP[i].push(allTrumpArray[temps[i][k]]["suitOfTru"]);
+  }
+}
+
+//数字保存配列を、判定に使えるように昇順
+//sort()を拡張して昇順にできるようにした //デフォルトsort()ではうまくいかなかった
+var ascOyaNum = oyaNum.slice().sort(function(a, b){
+  return a - b;
+});
+
+var ascKodomoNum = kodomoNum.slice().sort(function(a, b){
+  return a - b;
+});
+
+
+
+
+//----ソート確認用----------------------------------------------
+// console.log("====== ソート確認 ======");
+// console.log("== ソート前 ==");
+// console.log("親 " + oyaNum);
+// console.log("子 " + kodomoNum);
+// console.log("== ソート後 ==");
+// console.log("--- 親 ---");
+// console.log("数字 " + ascOyaNum);
+// console.log("柄 " + oyaSuit);
+// console.log("---- 子 ----");
+// console.log("数字 " + ascKodomoNum);
+// console.log("柄 " + kodomoSuit);
+console.log("");
+//-------------------------------------------------------------
+
+
+
+//---------------- カードの結果判定 ----------------
+
+//----- 役（rank）判定 -----------------------------
+var ranks = {"ロイヤルフラッシュ": 9, "ストレートフラッシュ": 8, "フォーカード": 7, "フルハウス": 6, "フラッシュ": 5, "ストレート": 4, "スリーオブアカインド": 3, "ツーペア": 2, "ワンペア": 1, "ハイカード": 0}
+
+//----- 役が同じ場合に使うハイカード判定用の配列 -------------
+//添え字で判定（1が一番強いため）
+var highCard = [2, 3 ,4 ,5 ,6 ,7 ,8 ,9 , 10, 11, 12, 13, 1];
+
+
+//----- 役の結果確認 ------------------
+console.log("親の手札");
+console.log(ascOyaNum);
+console.log(oyaSuit);
+console.log("子の手札");
+console.log(ascKodomoNum);
+console.log(kodomoSuit);
+console.log("-------------------");
+//--------------------------------------------
+
+console.log("親の役");
+var oyaHigh;
+var oyaResult = judgeRan1(ascOyaNum, oyaSuit, oyaHigh);
+// console.log(ascOyaNum);
+if(!oyaResult){
+  oyaResult = judgeRan2(ascOyaNum);
+}
+if(oyaResult){ //役の確認
+  console.log(oyaResult);
+}
+
+console.log("子の役");
+var kodomoHigh;
+var kodomoResult = judgeRan1(ascKodomoNum, kodomoSuit, kodomoHigh);
+if(!kodomoResult){
+  kodomoResult = judgeRan2(ascKodomoNum);
+}
+if(kodomoResult){ //役の確認
+  console.log(kodomoResult);
+}
+
+var oyaRank = ranks[oyaResult]; //数字で返ってくる
+var kodomoRank = ranks[kodomoResult]
+
+//勝ち負け判定
+if(kodomoResult < oyaResult){
+  console.log("親の勝ち!");
+} else if(kodomoResult == oyaResult){
+  //役の番号が同じ場合はハイカードで勝ち負け判定
+  // judgeHigh(ascOyaNum, ascKodomoNum);
+
+
+
+
+} else {
+  console.log("子の勝ち!");
+}
+
+var highArray = [];
+console.log(oyaNum);
+checkHigh(oyaNum, highArray);
+
+
+
+
+// }; //確認 for文
+
+
+//-------- 役を判定する関数 ------------
+
+//判定関数その1(ロイヤルフラッシュ, ストレートフラッシュ, フラッシュ, ストレート)
+function judgeRan1(numArray, suitArray, result){
+  var flag = 0;
+  var num = 0; //役判定用数字
+  var rf = [10, 11, 12, 13, 1]; //ロイヤルフラッシュ判定用でエースが末尾にある
+  // console.log(numArray[0] == 1);
+
+  for(var x = 0; x < 2; x++){ //先頭が1だっ時のために、2回行う
+    if(x == 1){ //2回目のループで先頭要素を末尾に持っていき、1があった時に備える
+      if(numArray[0] == 1){
+        var min = numArray.shift(); //エースがあったら末尾にもっていく
+        numArray.push(min);
+        // console.log("1があったので大ループ2回目");
+        // console.log(numArray);
+      }
+    }
+
+
+      // console.log(m + "回目");
+      num = 0;
+      for(var i = 0; i < numArray.length; i++){ //ストレート
+        if(x == 0){
+          if(numArray[i]+1 == numArray[i+1]){
+            num++;
+            if(num == 4){
+              result = "ストレート";
+              // resultArray = numArray; //配列にアクセスできる変数
+              // alert( "ストレート--" + m)
+            }
+          } else {
+            num =  0; //なかったら初期化
+            break ;
+          }
+        } else {
+            if(numArray[i] == rf[i]){
+              num++;
+              if(num == 5){
+                result = "ストレート";
+                // alert( "ストレート--" + m)
+              }
+            } else {
+              num =  0; //なかったら初期化
+              break ;
+            }
+          }
+      }
+
+      for(var i = 0; i < numArray.length; i++){ //フラッシュ
+        if(suitArray[i] == suitArray[suitArray.length-1]){
+          num++;
+          if(num == 4){
+            result = "フラッシュ";
+            // alert("フラッシュ--" + m)
+          }
+        } else {
+          num = 0;
+          break;
+        }
+      }
+
+      for(var i = 0; i < numArray.length; i++){ //連番かつ柄が一緒 ストレートフラッシュ
+        // console.log((numArray[i]+1 == numArray[i+1]) && (suitArray[i] == suitArray[suitArray.length-1]));
+        if((numArray[i]+1 == numArray[i+1]) && (suitArray[i] == suitArray[suitArray.length-1])){
+          num++;
+          if(num == 4){
+            result = "ストレートフラッシュ";
+            // alert("ストレートフラッシュ-- " + m)
+          }
+        } else {
+          num = 0;
+          break;
+        }
+      }
+
+
+      for(var i = 0; i < numArray.length; i++){ //rfに一致&&柄が一緒 ロイヤルフラッシュ
+        // console.log((numArray[i] == rf[i]) && (suitArray[i] == suitArray[suitArray.length-1]));
+        if((numArray[i] == rf[i]) && (suitArray[i] == suitArray[suitArray.length-1])){
+          num++;
+          if(num == 4){
+            result = "ロイヤルフラッシュ";
+            // alert("ロイヤルフラッシュ-- " + m)
+          }
+        } else {
+          num = 0;
+          break;
+        }
+      }
+    }
+  return result;
+}
+
+
+//判定関数その2(フォーカード, フルハウス, スリーオブアカインド, ツーペア, ワンペア, ハイカード)
+//昇順にした手札の末尾をとって探索し、役を出す
+function judgeRan2(numArray, result, high){
+  var num = 0;
+  for(var i = 0; i < 4; i++){
+    var val = numArray.pop();
+    // console.log(val + " --- " + numArray);
+    for(var k = 0; k < numArray.length; k++){
+      if(numArray[k] == val) {
+        num += 1;
+        // high.push();
+
+      }
+    }
+    if(num == 6){
+      result = "フォーカード";
+      // high = oyaNum[i];
+    } else if(num == 4){
+      result = "フルハウス"
+    } else if(num == 3){
+      result = "スリーオブアカインド";
+      // high = oyaNum[i];
+    } else if(num == 2){
+      result = "ツーペア";
+      // high = oyaNum[i];
+    } else if(num == 1){
+      result = "ワンペア";
+      // high = oyaNum[i];
+    } else {
+      result = "ハイカード";
+    }
+  }
+  console.log(high);
+//上の元の部分
+  // if(num == 6){
+  //   result = "フォーカード";
+  //   high = oyaNum[];
+  // } else if(num == 4){
+  //   result = "フルハウス"
+  // } else if(num == 3){
+  //   result = "スリーオブアカインド";
+  // } else if(num == 2){
+  //   result = "ツーペア";
+  // } else if(num == 1){
+  //   result = "ワンペア";
+  // } else {
+  //   result = "ハイカード";
+  // }
+  return result;
+}
+
+
+
+
+
+
+
+
+
+//  ハイカード判定
+
+// 配列highArrayに
+function checkHigh(numArray, highArray){
+  var num = 0;
+  var array1 = [];
+  for (var i = 0; i < 5; i++) {
+    for(var k = i+1; k < 5; k++){
+    // console.log(numArray[i]);
+      if(numArray[i] == numArray[k]){
+        num++;
+        if(num == 6){ //フォーカード
+          highArray[i] = numArray[i];
+          // console.log(i);
+          num = 0;
+        } else if(num == 3){ //フルハウス、スリーカード
+          highArray.unshift(numArray[i]);
+          num = 0; //初期化
+
+        } else if(num == 1){ //ワンペア、ツーペア
+          highArray.push(numArray[i]);
+          // array1.push(numArray[i]);
+          console.log(numArray[i]);
+          console.log(i);
+          num = 0;
+        }
+      }
+    }
+    num = 0;
+  }
+  console.log(highArray);
+  console.log();
+}
+
+
+
+// フルハウス同士の判定用
+// var high=[]
+// var array = [4,3,3,4,3];
+// var counts = {};
+//
+// for(var i=0;i< array.length;i++)
+// {
+//   var key = array[i];
+//   counts[key] = (counts[key])? counts[key] + 1 : 1 ;
+// }
+// for(var i = 0; i < array.length; i++){
+//     if(counts[array[i]] == 3){
+//       console.log("三つある");
+//       high[0] = array[i];
+//     } else if(counts[array[i]] == 2){
+//       console.log("2つある");
+//     } else if(counts[array[i]] == 4){
+//       console.log("4つある");
+//     }
+// }
+// console.log(high);
+
+
+
+
+
+
+
+//関数化しようとして失敗
+// function hantei(numArray, conditionalEx, rankName){
+//   var num = 0;
+//   var result; //条件式
+//   console.log(m + " 回目");
+//   for(var i = 0; i < numArray.length; i++){
+//
+//     if(conditionalEx){
+//       num++;
+//       if(num == 4){
+//         result = rankName;
+//         // alert(m + " 回目");
+//       }
+//     } else {
+//       num =  0; //なかったら初期化
+//     }
+//   }
+//   return result;
+// }
+
+
+
+
+    </script>
+  </body>
+</html>

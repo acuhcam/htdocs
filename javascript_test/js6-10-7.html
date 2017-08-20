@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    体重を入力してください:<input type="text" id="id01"/><br />
+    身長をメートルで入力してください:<input type="text" id="id02"/><br />
+    <input type="button" value="計算" onclick="calcBmi();"/>
+
+    <script>
+    
+    //入力された体重と身長からBMI値を計算するプログラム
+    function calcBmi() {
+      var weight = document.getElementById("id01").value; // idが「id01」のテキストボックスに入力された値を取得して変数weightに代入
+      var height = document.getElementById("id02").value;
+      weight = Number(weight); //入力された文字列を数値に変換する
+      height = Number(height);
+
+      var bmi = weight / (height * height);
+      alert("あなたのBMI値は" + bmi + "です");
+    }
+
+    </script>
+  </body>
+</html>

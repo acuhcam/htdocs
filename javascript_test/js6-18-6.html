@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <script>
+    //UTC(協定世界時)での1970年1月1日0時0分0秒から現在までの経過時間をミリ秒単位で取得
+    // var timeNow = Date.now();
+    // var timeNow = new Date();
+    // console.log(timeNow.getFullYear());
+    // console.log(timeNow.getMonth());
+    // console.log(timeNow.getDate());
+    // console.log(timeNow.getDay());
+
+    //結果表示
+    // alert(timeNow);
+
+    // var d = new Date();
+
+    // var year = d.getFullYear();
+    // var month = d.getMonth() + 1;
+    // var day = d.getDate();
+    // var weekday = d.getDay();
+    //
+    // var hour = d.getHours();
+    // var min = d.getMinutes();
+    // var sec = d.getSeconds();
+    // var ms = d.getMilliseconds();
+    // var gt = d.getTime();
+    // console.log("これはDオブのミリ秒の部分です" + ms);
+    // console.log("これはDオブをミリ秒に変換したものです" + gt);
+
+    // console.log(d);
+    // var year = d.setFullYear(2017, 10, 30);
+    // var month = d.setMonth(11);
+    // var day = d.setDate(31);
+    //
+    // var hours = d.setHours(23);
+    // var minutes = d.setMinutes(59);
+    // var seconds = d.setSeconds(59);
+    // var ms = d.setMilliseconds(999);
+
+    // d.setTime(14000000000000);
+
+
+    // var weekdays = ["日", "月", "火", "水", "木", "金", "土"];
+
+    // alert(year + "年" + month + "月" + day + "日" + "(" + weekdays[weekday] + ")" + hour + "時" + min + "分" + sec + "." + ms + "秒");
+
+    // var count = 0;
+    // var countup = function(){
+    //   console.log(count++);
+    // }
+    //
+    // var id = setInterval(function(){
+    //   countup();
+    //   if(count > 5){
+    //     clearInterval(id);
+    //   }}, 1000);
+    //
+    // console.log(d);
+    //
+
+    //
+    // function timeLag(){
+    //   alert("3秒経ちました!")
+    // }
+// for文などと組み合わせ一定時間毎に処理させる場合などに使う
+    // setTimeout(timeLag, 3000); //実行したい関数の名前のみ
+
+    // parseInt("1");
+    // parseInt("2017year");
+
+    // function print(str){
+    //   document.write(str + "<br />");
+    // }
+    //
+    // var ary = new Array(89, 92, 73);
+    //
+    // document.write("<p>");
+    //
+    // print(ary.join());
+    // console.log(ary.join());
+    // print(ary.join(", "));
+    // console.log(ary.join(", "));
+    //
+    // document.write("</p>");
+    //
+    // var tokaidou = new Array("東京", "品川", "新横浜", "名古屋", "京都", "新大阪");
+    //
+    // document.write("<p>");
+    //
+    // print(tokaidou.join("-->"));
+    //
+    // document.write("</p>");
+    //
+    // var personal = new Array("高橋", 29, "東京都", true, ["太郎", "次郎"]);
+    //
+    // document.write("<p>");
+    //
+		// print(personal.join(" : "));
+    // console.log(personal.join(" : "));
+    //
+		// document.write("</p>");
+    //
+
+    // function hikaku(val1, val2){
+    //   if(val1.toString() < val2.toString()){
+    //     return 1;
+    //   } else {
+    //     return -1;
+    //   }
+    // }
+    //
+    // var ary = new Array(1,2,3,4);
+    // ary.sort(hikaku);
+    // console.log(ary.reverse(hikaku));
+
+    // function print(str){
+		//   document.write(str + "<br />");
+		// }
+    //
+		// var ary;
+    //
+		// document.write("<p>");
+    //
+		// ary = new Array("tokyo", "osaka", "nagoya");
+		// print("before : " + ary);
+    //
+		// ary.sort();
+		// print("after : " + ary);
+    //
+		// document.write("</p>");
+    //
+		// document.write("<p>");
+    //
+		// ary = new Array(89, 4103, 123);
+		// print("before : " + ary);
+    //
+		// ary.sort();
+		// print("after : " + ary);
+    //
+		// document.write("</p>");
+    //
+		// document.write("<p>");
+    //
+		// ary = ["札幌", "沖縄",,"東京",,"京都"];
+		// print("before : " + ary);
+    //
+		// ary.sort();
+		// print("after : " + ary);
+    //
+		// document.write("</p>");
+
+    // var tagetString = "Apple is the fruit.";
+    var tagetString = "電話番号:03-1111-2222  電話番号:040-333-4444";
+    var reString = /0\d{1,2}-\d{3,4}-\d{4}/g;
+    var arrayString = tagetString.match(reString);
+		var reString1 = "Apple";
+		var reString2 = /apple/i;
+		var result1, result2;
+
+
+    if (tagetString.match(reString1)){
+      result1 = "Found";
+    } else {
+      result1 = "Not found";
+    };
+    if (tagetString.match(reString2)){
+      result2 = "Found";
+    } else {
+      result2 = "Not found";
+    };
+
+    console.log(result1);
+    console.log(result2);
+
+    console.log(arrayString);
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

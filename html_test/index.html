@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <meta charset="UTF-8">
+    <title>HTMLの学習</title>
+<!--     説明 -->
+    <meta name="description" content="このページはHTMLを学習するページです">
+<!--     検索エンジン用のキーワード -->
+    <meta name="keywords" content="HTML,学習,タグ,ページ">
+    <!-- <link rel="stylesheet" href="sample.css"> -->
+    <link rel="stylesheet" href="style.css" >
+
+<!--     [if lt IE 9] -->
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<!-- [endif] -->
+
+<script src="sample.js"></script>
+</head>
+<body>
+<!--         ここにサイトに表示するコンテンツ内容を記述 -->
+  <header>
+    <h1>果物屋</h1>
+    <p>
+      <a href="news.html">お知らせ</a>
+      <a href="blog.html">店長ブログ</a>
+    </p>
+    <nav>
+      <h1>メニュー</h1>
+      <ul>
+        <li><a href="index.html">トップページ</a></li>
+        <li><a href="item.html">商品一覧</a></li>
+        <li><a href="shop.html">店舗紹介</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <article>
+    <p>とちおとめ、入荷しました</p>
+    <p>とちおとめとは</p>
+    <aside>
+      <h1>とちおとめ誕生秘話</h1>
+      <p>
+      栃木県と言えば、いちご。いちごと言えば、とちおとめ。誰もが一度は味わったことがあろうあのいちごも、今年で生誕20周年を迎える。その誕生秘話を握る
+    </p>
+    </aside>
+  </article>
+
+  <footer>
+    <p>
+      <a href="help.html">ヘルプ</a>
+      <a href="policy.html">利用規約</a>
+      <a href="contact.html">お問い合わせ</a>
+    </p>
+    <p>Copyright 2016</p>
+  </footer>
+
+
+
+<hr>
+    <h1>HTMLの書き方</h1>
+    <p id="abc">初めての<br>HTMLを作りました</p>
+
+    <a href="https://www.google.com">googleのページへジャンプします</a><br>
+    <a href="index2.html" title="index2">新しく作成したindex2.htmlへジャンプします</a><br>
+    <a href="#xyz">xyzの指定はここに飛んできますへジャンプします</a><br>
+
+    <br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+
+    <p id="xyz">xyzの指定はここに飛んできます</p>
+
+    <br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+
+    <a href="#abc">初めてのHTMLを作りましたへジャンプします</a><br>
+
+    <br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+  	<br>
+
+
+    <table>
+    <tr><th rowspan="2">テーブルの見出し1</th><th colspan="2">テーブルの見出し2</th><th>テーブルの見出し3</th></tr>
+    <tr><td rowspan="2">テーブルの内容1</td><td colspan="2">テーブルの内容2</td><td>テーブルの内容3</td></tr>
+    <tr><td>テーブルの内容4</td><td>テーブルの内容5</td><td>テーブルの内容6</td></tr>
+    </table>
+
+
+    <form name="" action="" method="">
+      <label for="name" accesskey="n">名前:</label>
+      <input type="text" name="name" id="name"><br>
+      性別:<input type="radio" name="sex" value="male" id="otoko">
+      <label for="otoko" accesskey="m">男</label>
+      <input type="radio" name="sex" value="female" id="onna">
+      <label for="onna" accesskey="f">女</label><br>
+      血液型:<label><input type="radio" name="blood" value="a">A型</label>
+      <label><input type="radio" name="blood" value="b">B型</label>
+      <label><input type="radio" name="blood" value="o">O型</label>
+      <label><input type="radio" name="blood" value="ab">AB型</label><br>
+      血液型:<br>
+      <select name="blood">
+        <option value="A">A型</option>
+        <option value="B">B型</option>
+        <option value="O">O型</option>
+        <option value="AB">AB型</option>
+      </select><br>
+      星座:<br>
+      <select name="horoscope" size=12>
+      <option value="aries">おひつじ座</option>
+      <option value="taurus">おうし座</option>
+      <option value="gemini">ふたご座</option>
+      <option value="cancer">かに座</option>
+      <option value="leo">しし座</option>
+      <option value="virgo">おとめ座</option>
+      <option value="libra">てんびん座</option>
+      <option value="scorpio">さそり座</option>
+      <option value="saggitarius">いて座</option>
+      <option value="capricorn">やぎ座</option>
+      <option value="aquarius">みずがめ座</option>
+      <option value="pisces">うお座</option>
+      </select><br>
+      ご感想:<br>
+      <textarea name="kanso" rows="4" cols="40">ここに感想を記入してください</textarea><br>
+      <input type="hidden" name="secret" value="内緒">
+      <input type="submit" value="送信">
+    </form>
+
+
+
+    <img src="images/image01.jpg" alt="画像の説明">
+
+<hr>
+
+
+
+
+    </body>
+</html>

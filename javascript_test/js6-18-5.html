@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>(3)Dateクラス</h1>
+    <p>日付と時刻を扱うクラスです</p>
+
+    <div style="margin-botom: 5px;">■協定世界時の 1970/01/01 00:00:00 から開始して、経過した時間</div>
+    ミリ秒:<input type="text" id="edit_box00_get_time" value="" style="width:200px;"/>
+
+    <div style="margin-top:20px; margin-bottom:5px;">■現地時間</div>
+      年:<input type="text" id="edit_box00_year" value="" style="width:50px"/>
+      月:<input type="text" id="edit_box00_mon" value="" style="width:50px"/>
+      日:<input type="text" id="edit_box00_date" value="" style="width:50px"/>
+      曜日:<input type="text" id="edit_box00_week" value="" style="width:50px"/>
+    <br>
+      時:<input type="text" id="edit_box00_hou" value="" style="width:50px"/>
+      分:<input type="text" id="edit_box00_min" value="" style="width:50px"/>
+      秒:<input type="text" id="edit_box00_sec" value="" style="width:50px"/>
+    ミリ秒:<input type="text" id="edit_box00_millisec" value="" style="width:50px"/>
+    <br>
+    <div style="margin-top:20px; margin-bottom:5px;">■協定世界時</div>
+      年:<input type="text" id="edit_box00_utc_year" value="" style="width:50px"/>
+      月:<input type="text" id="edit_box00_utc_mon" value="" style="width:50px"/>
+      日:<input type="text" id="edit_box00_utc_date" value="" style="width:50px"/>
+      曜日:<input type="text" id="edit_box00_utc_week" value="" style="width:50px"/>
+    <br>
+      時:<input type="text" id="edit_box00_utc_hou" value="" style="width:50px"/>
+      分:<input type="text" id="edit_box00_utc_min" value="" style="width:50px"/>
+      秒:<input type="text" id="edit_box00_utc_sec" value="" style="width:50px"/>
+    ミリ秒:<input type="text" id="edit_box00_utc_millisec" value="" style="width:50px"/>
+
+    <div style="margin-top:20px; margin-bottom:5px;">■協定世界時と現地時間との差</div>
+        分:<input type="text" id="edit_box00_timezone_offset" value="" style="width:50px;"/>
+
+
+
+    <script type="text/javascript">
+<!--
+    //匿名関数内で実行
+    (function (){
+
+      //曜日情報
+      var ary = ["日", "月", "火", "水", "木", "金", "土"];
+
+      //一定時間毎に実行
+      setInterval(function(){
+        var element;
+
+        //現在のローカル時間が格納された、Dateオブジェクトを作成する
+        var date_obj = new Date();
+
+        //1970/01/01 00:00:00 から開始して経過した時間を取得
+        element = document.getElementById("edit_box00_get_time");
+        element.value = date_obj.getTime();
+
+        //年を取得
+        element = document.getElementById("edit_box00_year");
+        element.value = date_obj.getFullYear();
+        element = document.getElementById("edit_box00_utc_year");
+        element.value = date_obj.getUTCFullYear();
+
+        //月を取得
+        element = document.getElementById("edit_box00_mon");
+        element.value = date_obj.getMonth() + 1;
+        element = document.getElementById("edit_box00_utc_mon");
+        element.value = date_obj.getMonth() + 1;
+
+        //日を取得
+        element = document.getElementById("edit_box00_date");
+        element.value = date_obj.getDate();
+        element = document.getElementById("edit_box00_utc_date");
+        element.value = date_obj.getUTCDate();
+
+        //曜日を取得
+        element = document.getElementById("edit_box00_week");
+        element.value = ary[date_obj.getDay()];
+        element = document.getElementById("edit_box00_utc_week");
+        element.value = ary[date_obj.getUTCDay()];
+
+        //時間を取得
+        element = document.getElementById("edit_box00_hou");
+        element.value = date_obj.getHours();
+        element = document.getElementById("edit_box00_utc_hou");
+        element.value = date_obj.getUTCHours();
+
+        //分を取得
+        element = document.getElementById("edit_box00_min");
+        element.value = date_obj.getMinutes();
+        element = document.getElementById("edit_box00_utc_min");
+        element.value = date_obj.getUTCMinutes();
+
+        //秒を取得
+        element = document.getElementById("edit_box00_sec");
+        element.value = date_obj.getSeconds();
+        element = document.getElementById("edit_box00_utc_sec");
+        element.value = date_obj.getUTCSeconds();
+
+        //ミリ秒を取得
+        element = document.getElementById("edit_box00_millisec");
+        element.value = date_obj.getMilliseconds();
+        element = document.getElementById("edit_box00_utc_millisec");
+        element.value = date_obj.getUTCMilliseconds();
+
+        //協定世界時感と現地時間との差を取得
+        element = document.getElementById("edit_box00_timezone_offset");
+        element.value = date_obj.getTimezoneOffset();
+
+
+      }, 1000/60);
+    })();
+    //-->
+    </script>
+  </body>
+</html>

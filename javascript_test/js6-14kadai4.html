@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <p>4.switch文の課題1</p>
+  <p>十字路の真ん中でA君がどちらに行こうか迷っています、<br>B君はA君が何処に進むか決めたら行動を決めます</p><br>
+
+  <p id="straight">A君「よし真っ直ぐに行こう」</p>
+  <p id="back">A君「よし戻ろう」</p>
+  <p id="right">A君「よし右に行こう」</p>
+  <p id="left">A君「よし左に行こう」</p>
+  <p id="wayOfB"></p>
+
+
+  <script>
+  // 課題4
+
+
+  var wayOfB = document.getElementById("wayOfB");
+
+  function choiceOfB(choiceOfA, choiceOfB){
+    wayOfB.innerHTML = "A君が" + choiceOfA + "に決めたので僕は" + choiceOfB + "だ！"
+  };
+
+  document.getElementById("straight").addEventListener("click", function(){
+    choiceOfB("真っ直ぐ", "うしろ");
+  }, false);
+  document.getElementById("back").addEventListener("click", function(){
+    choiceOfB("うしろ", "まっすぐ");
+  }, false);
+  document.getElementById("right").addEventListener("click", function(){
+    choiceOfB("右", "左");
+  }, false);
+  document.getElementById("left").addEventListener("click", function(){
+    choiceOfB("左", "右");
+  }, false);
+  </script>
+</body>
+</html>

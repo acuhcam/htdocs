@@ -1,0 +1,405 @@
+/*タブレット用*/
+@media screen and (max-width:959px) {
+
+}
+
+
+#wrap {
+  width: 780px;
+  margin: 0 auto;
+  border: solid 1px black;
+  background-color: #c4dbee;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  #wrap {
+    width: 600px;
+  }
+}
+
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  #wrap {
+    width: auto;
+  }
+}
+
+
+#inner {
+  margin: 10px;
+}
+
+#header {
+  margin-bottom: 10px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+#menu {
+  margin-bottom: 10px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+#largeWrap {
+  width: 760px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  background-color: red
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  #largeWrap {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  #largeWrap {
+    width: auto;
+    flex-direction: column;
+  }
+}
+
+#leftWrap {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  #leftWrap {
+    width: auto;
+    margin-bottom: 10px;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  #leftWrap {
+    width: auto;
+    margin-bottom: 10px;
+  }
+}
+
+#sideWrap {
+  border: solid 1px black;
+  width: 250px;
+  background-color: green;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  #sideWrap {
+    width: auto;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  #sideWrap {
+    width: auto;
+  }
+}
+
+.sideWrapFlexBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .sideWrapFlexBox {
+    flex-direction: column;
+  }
+}
+
+#sideWrapInner {
+  margin: 10px;
+}
+
+/*スマホ用*/
+@media screen and ( max-width:599px) {
+ #sideWrapInner {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+}
+
+.firstWrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border: solid 1px black;
+  background-color: green
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .firstWrap {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.box1 {
+  border: solid 1px black;
+  /*width: 102.5px;*/
+  width: auto;
+  margin: 10px;
+  background-color: white;
+}
+
+.secondWrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .secondWrap {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+.box2 {
+  border: solid 1px black;
+  width: auto;
+  margin: 10px;
+  background-color: white;
+}
+
+.thirdWrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .thirdWrap {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.box3 {
+  border: solid 1px black;
+  width: auto;
+  margin: 10px;
+  background-color: white;
+}
+
+.forthWrap {
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px black;
+  background-color: green;
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .forthWrap {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+.box4 {
+  border: solid 1px black;
+  width: auto;
+  margin: 10px;
+  background-color: white;
+}
+
+.box5 {
+  border: solid 1px black;
+  width: auto;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.box6 {
+  border: solid 1px black;
+  width: auto;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.box7 {
+  border: solid 1px black;
+  width: auto;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.box8 {
+  border: solid 1px black;
+  width: auto;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+#footer {
+  border: solid 1px black;
+  margin: 10px 0px;
+  background-color: green;
+}
+
+
+
+
+/*
+#wrap {
+width: 780px;
+margin: 0 auto;
+border: solid 1px black;
+background-color: #c4dbee;
+}
+
+#inner {
+padding: 10px 0px;
+margin: 10px;
+}
+
+#header {
+border: solid 1px black;
+background-color: green;
+margin: 10px 0px;
+}
+
+#menu {
+border: solid 1px black;
+margin: 10px 0px;
+background-color: green;
+}
+
+#largeWrap {
+width: 500px;
+float:left;
+}
+
+#sideWrap {
+border: solid 1px black;
+width: 250px;
+float: right;
+background-color: green;
+}
+
+.firstWrap {
+border: solid 1px black;
+background-color: green;
+margin: 10px 0;
+}
+
+.box1 {
+border: solid 1px black;
+width: 102.5px;
+margin: 10px;
+float: left;
+background-color: white;
+}
+
+.secondWrap {
+border: solid 1px black;
+background-color: green;
+margin: 10px 0;
+}
+
+.box2 {
+border: solid 1px black;
+width: 144px;
+margin: 10px;
+float: left;
+background-color: white;
+}
+
+.thirdWrap {
+border: solid 1px black;
+background-color: green;
+margin: 10px 0;
+}
+
+.box3 {
+border: solid 1px black;
+width: 227px;
+margin: 10px;
+float: left;
+background-color: white;
+}
+
+.forthWrap {
+border: solid 1px black;
+background-color: green;
+margin: 10px 0;
+}
+
+.box4 {
+border: solid 1px black;
+width: 61px;
+margin: 10px;
+float: left;
+background-color: white;
+}
+
+.box5 {
+border: solid 1px black;
+width: 230px;
+margin: 10px;
+background-color: white;
+}
+
+.box6 {
+border: solid 1px black;
+width: 102px;
+margin: 10px;
+float:left;
+background-color: white;
+}
+
+.box7 {
+border: solid 1px black;
+width: 60.6px;
+margin: 10px;
+float: left;
+background-color: white;
+}
+
+.box8 {
+border: solid 1px black;
+width: 230px;
+margin: 10px;
+background-color: white;
+}
+
+#footer {
+border: solid 1px black;
+margin: 10px 0px;
+background-color: green;
+}
+
+.clear {
+clear: both;
+}
+.clear hr {
+display: none;
+}*/

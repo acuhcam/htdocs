@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <p><label for="input">最大値</label><input type="text" value="10" id="input" class="input"/></p>
+
+    <p id="output" class="output"></p>
+    <p id="error" class="error none"></p>
+
+    <p><button id="fire" class="button">実行</button></p>
+    <p><button id="reset" class="button">リセット</button></p>
+
+
+    <script>
+    //実行
+    document.getElementById("fire").addEventListener("click", function(){
+      try {
+
+        //最大値
+        var max = Number(document.getElementById("input").value);
+
+        //0?10の乱数を発生([10+1]を指定する)
+        //random * (max+1)にfloorで0~maxになる
+        var rand = Math.floor(Math.random() * (max+1));
+
+        //結果を表示
+        document.getElementById("output").textContent = rand;
+
+        //コンソールで内容を表示
+        console.log(rand);
+
+        //エラーを表示
+        errorElement.className = "error none";
+      } catch( msg ) {
+        //エラー表示
+        errorElement.className = "error";
+        errorElement.textContent = msg;
+        console.error(msg);
+      }
+    }, false);
+
+    //初期値の記録
+    var defaultValue = document.getElementById("input").value;
+
+
+    //リセット
+    document.getElementById("reset").addEventListener("click", function(){
+      errorElement.className = "error none";
+      errorElement.textContent = "";
+      document.getElementById("input").value = defaultValue;
+      document.getElementById("output").textContent = "";
+    }, false);
+
+    //エラー表示用の要素
+    var errorElement = document.getElementById("error");
+
+
+
+
+    </script>
+  </body>
+</html>

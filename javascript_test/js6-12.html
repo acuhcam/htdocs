@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body onload="console.log('onload!');" onscroll="console.log('onscroll');" onunload="console.log('onunload!');">
+    <!-- 『イベントハンドラ』とは『そのイベントを処理するために用意されている処理群』の事を指します。 -->
+
+     <p onclick="console.log('イベントがおこったよ');" ondblclick="console.log('ダブルクリックだ！');">Hello onclick</p>
+    <p onmouseover="console.log('イベントがおこったよ');" onmouseout="console.log('カーソルが離れた');">コンソールへマウスオーバー</p>
+    <p ondblclick="console.log('ダブルクリックだ！');">ダブルクリック</p>
+    <p id="event" onmouseover="changeColor('event', '#ff0000');" onmouseout="changeColor('event', '#0000ff');">色が変わるよ</p>
+
+    <!-- <p id="event2">アラートを表示する</p> -->
+    <!-- <p id="event3">DOMの読み込み</p> -->
+
+    <!-- <p id="event">イベント</p> -->
+    <!-- <img src="../html_test/images/photo2.jpg" onAbort="console.log('onabort')"> -->
+    <!-- <input type="text" onblur="console.log('onblur');"/> -->
+    <!-- <input type="text" onchange="console.log('onchange');"> -->
+    <!-- <img src="image.jpg" alt="画像1" onerror="console.log('onerror');"/> -->
+    <!-- <input type="button" onfocus="console.log('onfocus');"/> -->
+    <!-- <input type="text" oninput="console.log('oninput');"/> -->
+    <!-- <form> -->
+        <!-- <input type="url" oninvalid="console.log('oninvalid');"/> -->
+        <!-- <input type="submit"/> -->
+    <!-- </form> -->
+    <!-- <input type="text" onkeydown="console.log('onkeydown');"/> -->
+    <!-- <input type="text" onkeypress="console.log('onkeypress');"/> -->
+    <!-- <input type="text" onkeyup="console.log('onkeyup');"/> -->
+
+    <!-- <img src="../html_test/images/photo2.jpg" onmousedown="console.log('onmousedown!');" onmouseenter="console.log('onmouseenter');" onmouseleave="console.log('onmouseleave');" onmousemove="console.log('onmousemove!');" onmouseout="console.log('onmouseout!');" > -->
+<!-- <br><br> -->
+    <!-- <form id="form1"> -->
+      <!-- <input type="url" id="input1"/> -->
+      <!-- <input type="submit"/> -->
+      <!-- <input type="reset"/> -->
+    <!-- </form> -->
+
+
+    <script>
+    //  src="./js/js6-12.js"
+      function changeColor(id, font_color) {
+        document.getElementById(id).style.color = font_color;
+      }
+
+
+      var elem = document.getElementById("event");
+//イベントハンドラに渡すのは値ではなく無名関数を渡す
+      elem.onmouseover = function() {
+        console.log("event1");
+        elem.style.color = "red";
+      }
+
+      elem.onmouseout = function() {
+        console.log("event2");
+        elem.style.color = "#000000";
+      }
+
+      // var elem2 = document.getElementById("form1");
+      // elem2.onreset = function() {
+      //   console.log('onreset!');
+      // }
+      // elem2.onsubmit = function() {
+      //   console.log('onsubmit!');
+      // }
+      //
+      // var input1 = document.getElementById("input1");
+      // input1.onselect = function() {
+      //   console.log('onselect');
+      // }
+
+      // function init() {
+      //   alert("リロードされました");
+      // }
+
+      // var elem3 = document.getElementById("event2");
+
+      // elem3.addEventListener("click", function(){
+        // alert("event2!");
+      // }, false);
+
+      // elem3.addEventListener("click", function(){
+      //   alert("event3!");
+      // }, false);
+
+//windowオブジェクトとは、ブラウザそのものを指すオブジェクトだと思っていい。loadイベントはHTMLタグ全体の読み込みが完了した時に発生するイベントなので「ブラウザそのもの」を指す「windowオブジェクト」にイベント登録する必要がある。
+      // window.addEventListener("load", function() {
+      //   alert("DOMの読み込みが完了したよ!");
+      // }, false);
+    </script>
+  </body>
+</html>

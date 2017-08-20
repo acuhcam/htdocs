@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- AとBは同じ金額を持っていないとする -->
+
+    <p>A君とB君が緑の窓口で相談しています</p>
+    <p>A君「指定席に変えたいね」</p>
+    <p>B君「追加料金が発生するよ」</p>
+    <p>A君「じゃあどちらかが通常の切符代以外に2人分の追加料金分以上を持っていて、より多く持っている方が奢るってどう？」</p>
+    <p>B君「そうしよう！」</p>
+    <p id="event1"></p>
+    <p id="speeA1"></p>
+    <p id="speeB1"></p>
+    <p id="result"></p>
+
+
+
+    <script>
+    var fee = 8000;
+    var additionalFee = 2000;
+    var moneyOfA = 10000;
+    var moneyOfB = 12000;
+    var event1 = document.getElementById("event1");
+
+    event1.innerHTML = "2人「通常料金" + fee + "円と追加料金" + additionalFee + "円だね」";
+
+    var speeA1 = document.getElementById("speeA1");
+    var speeB1 = document.getElementById("speeB1");
+    var result = document.getElementById("result");
+    var idealMoney = fee + additionalFee * 2;
+    event1.addEventListener("click", function(){
+      speeA1.innerHTML = "A君「僕は" + moneyOfA + "円持ってるよ」";
+      speeB1.innerHTML = "B君「僕は" + moneyOfB + "円持ってるよ」";
+
+      if(idealMoney <= moneyOfA || idealMoney <= moneyOfB) {
+        if(moneyOfA > moneyOfB) {
+          result.innerHTML = "A君「僕が奢るね」";
+        } else {
+          result.innerHTML = "B君「僕が奢るね」";
+        }
+      } else {
+        result.innerHTML = "2人「指定席は諦めるか」";
+      }
+    }, false);
+
+
+    </script>
+  </body>
+</html>

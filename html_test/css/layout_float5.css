@@ -1,0 +1,101 @@
+#wrap {
+  width: 780px;
+  margin: 0 auto;
+  border: solid 1px black;
+  background-color: #c4dbee;
+}
+
+#inner {
+  padding: 10px 0px;
+  margin: 10px;
+}
+
+#header {
+  border: solid 1px black;
+  background-color: green;
+  margin: 10px 0px;
+}
+
+
+#largeWrap {
+  width: 500px;
+  float:right;
+}
+
+#sideWrap {
+  border: solid 1px black;
+  width: 250px;
+  margin: 10px 0px;
+  float: left;
+  background-color: green;
+}
+
+.firstWrap {
+  border: solid 1px black;
+  background-color: green;
+  margin: 10px 0;
+}
+
+.box1 {
+  width: 102.5px;
+  margin: 10px;
+  float: left;
+  border: solid 1px black;
+  background-color: white;
+}
+
+.secondWrap {
+  border: solid 1px black;
+  background-color: green;
+  margin: 10px 0;
+}
+
+.box2 {
+  border: solid 1px black;
+  width: 144px;
+  margin: 10px;
+  float: left;
+  background-color: white;
+}
+
+.thirdWrap {
+  border: solid 1px black;
+  background-color: green;
+  margin: 10px 0;
+}
+
+.box3 {
+  border: solid 1px black;
+  width: 227px;
+  margin: 10px;
+  float: left;
+  background-color: white;
+}
+
+.forthWrap {
+  border: solid 1px black;
+  background-color: green;
+  margin: 10px 0;
+}
+
+.box4 {
+  border: solid 1px black;
+  width: 61px;
+  margin: 10px;
+  float: left;
+  background-color: white;
+}
+
+
+#footer {
+  border: solid 1px black;
+  margin: 10px 0px;
+  background-color: green;
+}
+
+.clear {
+  clear: both;
+}
+.clear hr {
+  display: none;
+}

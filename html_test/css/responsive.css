@@ -1,0 +1,123 @@
+/* ボディ */
+body
+{
+  margin: 0 ; /* スペース */
+  padding: 0 ; /* 余白 */
+  font-size: 15px ; /* 文字サイズ */
+  line-height: 1.618 ; /* 行の高さ */
+}
+
+/* スマホだけに適用する CSS */
+@media screen and ( max-width:479px )
+{
+  /* ボディ */
+  body
+  {
+    font-size: 13px ; /* 文字サイズ */
+  }
+}
+
+
+
+#wrapper {
+  width: 1000px;
+  margin:0 auto;   /* 左右に[auto]を指定することで、真ん中に寄る*/
+  padding: 0; /*上下の余白を0にしておく*/
+
+  /*overflow: hidden; */
+  /*float解除*/
+}
+
+/* スマホだけに適用する CSS */
+@media screen and (max-width:479px) {
+  #wrapper {
+    width: auto;
+    padding: 0 10px;  /*左右の余白*/
+  }
+}
+
+#inner {
+  overflow: hidden;
+}
+
+
+/* ヘッダー */
+.header
+{
+ border-bottom: 3px solid #888 ; /* 枠線 */
+ text-align: center ; /* テキスト、画像の真
+ん中寄せ */
+ padding: 1em 0 ; /* 上 下 の 余 白
+*/
+ margin-bottom: 2em ; /* 他のブロックとのス
+ペース */
+ background: #e8e8e8 ; /* 背景色(確認
+用) */
+}
+/* ロゴ画像を囲む[h1] */
+.logo-wrapper
+{
+ margin: 0 ; /* スペース */
+ padding: 0 ; /* 余白 */
+ line-height: 1 ; /* 行の高さ */
+}
+
+/* ロゴ画像 */
+.logo
+{
+ width: 400px ; /* 横幅 */
+ height: auto ; /* 高さ */
+}
+/* スマホだけに適用する CSS */
+@media screen and ( max-width:479px )
+{
+ /* ロゴ画像 */
+ .logo
+ {
+ width: 150px ; /* 横幅 */
+ }
+}
+
+
+.main {
+  width: 618px;
+  padding: 20px;
+  /*上下左右に20pxの余白*/
+  border: 1px solid rgba(0, 0, 0, 1);   /*枠線*/
+  float: left;
+}
+
+.side {
+  width: 320px;
+  float: right;
+}
+
+/*スマホだけに適用するcss*/
+@media screen and (max-width:479px)
+{
+  .main {
+    width: auto;
+    padding: 0;  /*余白*/
+    border: none;  /*枠線*/
+    float: none;
+  }
+
+  .side {
+    width: auto;
+    float: none;
+  }
+}
+
+
+/* フッター */
+.footer
+{
+ border-top: 3px solid #888 ; /* 枠線 */
+ text-align: center ; /* テキスト、画像の真
+ん中寄せ */
+ margin-top: 2em ; /* 他 の ブ ロ ッ
+クとのスペース */
+ padding: 1em 0 ; /* 上 下 の 余 白
+*/
+ background: yellow ;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascriptの学習</title>
+  </head>
+  <body>
+
+    <!-- <p id="test">Javascriptの学習</p> -->
+    <!-- <h1 id="title">タイトル1</h1> -->
+    <!-- <p id="element1">要素1</p> -->
+    <!-- <p id="element2">要素2</p> -->
+
+    <form name="mainForm">
+      <div>
+        <h3>text</h3>
+        <input name="_text" type="text" value="Hello world" />
+      </div>
+      <div>
+        <h3>radio</h3>
+        <input name="_radio" type="radio" value="year"/> year
+        <input name="_radio" type="radio" value="month"/> month
+        <input name="_radio" type="radio" value="day"/> day
+      </div>
+      <div>
+        <h3>checkbox</h3>
+        <input name="_checkA" type="checkbox"/> A
+        <input name="_checkB" type="checkbox"/> B
+      </div>
+      <div>
+        <h3>select</h3>
+        <select name="_select">
+          <option value="year">year</option>
+          <option value="month">month</option>
+          <option value="day">day</option>
+        </select>
+      </div>
+      <div>
+        <h3>textarea</h3>
+        <textarea name="_ta">Hello world</textarea>
+      </div>
+      <div>
+        <h3>file</h3>
+        <input name="_file" type="file" />
+      </div>
+    </form>
+
+
+    <script>
+    /*
+      var elem = document.getElementById("test");
+      alert(document.getElementById("test"));
+      console.log(document.getElementById("test").style.color = "red");
+      elem.style.color = "red";
+      elem.style.backgroundColor = "green";
+      elem.href = "http://www.google.co.jp/";
+      elem.className="add_class";
+      elem.innerHTML = "<span style='color: yellow'>span要素にした</span>"
+      console.log(elem);
+
+      var p = document.createElement("p");
+      var text1 = document.createTextNode("要素3");
+      document.body.appendChild(p).appendChild(text1);
+
+      var h1 = document.createElement("h1");
+      var text2 = document.createTextNode("h1要素追加");
+      document.body.appendChild(h1).appendChild(text2);
+      */
+
+      window.onload = function() {
+        // TODO: write code
+        // console.log("Hello, runstat!");
+
+        //変数に入れて使いやすくしている
+        var form = document.forms.mainForm;
+        // text
+        form._text.value = "Hellooooo world";
+        console.log("text:", form._text.value); // => text: Hello world
+
+        // radio
+        form._radio.value = "month"; //デフォルトで選択される選択しのvalue
+        console.log("radio:", form._radio.value); // => radio: year
+
+        //checkbox
+        form._checkB.checked = true;
+        form._checkA.checked = true;
+        console.log("checkbox:", "A=" + form._checkA.checked, "B=" + form._checkB.checked); // => checkbox: A=false B=true、デフォルトではfalse
+
+        // selectbox
+        form._select.value = "year";
+        console.log("select:", form._select.value); // => select: year
+
+        // textarea
+        form._ta.value = "Hello worldddddddddd"; //_taをnameにもっているtextareaの要素の設定
+        console.log("textarea:", form._ta.value); // => textarea: Hello world
+
+        // file
+        form._file.onchange = function() {
+          var file = form._file.files[0];
+
+          var fr = new FileReader(); //FileReaderの作成
+          //読み込み終了後の処理
+          fr.onload = function(res) {
+            console.log(fr.result); //resultで読み取り結果を取り出す。ファイルの中身を表示
+          };
+          fr.readAsText(file); //テキスト形式で読み込む
+        };
+      };
+
+    </script>
+    <!-- <script src="./js/js6-10.js"></script> -->
+  </body>
+</html>

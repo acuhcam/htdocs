@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p id="test1">test1</p>
+    <p id="test3">test3</p>
+
+    <script>
+    // 「!」はオペランドの値を真偽値として評価した後、その値を反転させます。
+      // console.log(!1);
+      // alert(!"") //true
+      // alert(!1) //false
+      // alert(!null) //true
+      // var elem = document.getElementById("test");
+      // if (!elem) {
+        // alert("id名『test』という要素がみつからないみたいです！")
+      // }
+
+      var elem1 = document.getElementById("test1");
+      var elem2 = document.getElementById("test2");
+
+      if(elem1 && elem2) {
+        elem1.style.color = "#00f";
+        elem2.style.color = "#00f";
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <p id="test">アラートを表示するよ！</p>
+
+
+    <script>
+      console.log(1 > 2);
+
+//配列のメモリ上のアドレスが同じかどうかtrue/falseで返す
+      var array1 = [1, 2, 3];
+      var array2 = [1, 2, 3];
+      console.log( array1 == array2);
+      //文字列に変換して比較する "1,2,3"
+      console.log(array1.toString() == array2.toString());
+
+      var isEqual = true;
+      for (var i = 0; i < array1.length; i++) {
+        if (array1[i] !== array2[i]) {
+          isEqual = false;
+        }
+      }
+
+      console.log(isEqual);
+//
+// var numbox1 = 3;
+// var numbox2 = 5;
+// var numbox3 = numbox1 + numbox2;
+//
+// if (numbox3 < 5) {
+//   alert("5より小さいです");
+// } else {
+//   alert("5より大きいです");
+// }
+
+/*
+    var num_box = 5;
+
+    if (num_box === 9) {
+      alert("等しい数値です");
+    } else if (num_box > 5) {
+      alert("5より大きい数値です");
+    } else {
+      alert("5以下の数値です");
+    }
+*/
+
+    if (true) { console.log("実行されました1"); }
+
+    /*　問答無用でelse文の中身が実行される
+    if (false) {
+      console.log("実行されました2");
+    } else {
+      console.log("実行されました3");
+    }
+    */
+
+// これはエラーになる
+  /*  if (false) {
+      console.log("実行される4");
+    } else {
+      console.log("実行される5");
+    } else if (false) {
+      console.log("実行される6");
+    }
+*/
+
+    if(1 < 2) {
+      console.log("実行される7");
+    }
+
+    if("test") {
+      console.log("実行される8");
+    }
+
+    if ("") {
+      console.log("実行される9");
+    } else {
+      console.log("実行される9");
+    }
+
+/*
+0はfalseとなる
+    var bool = 1;
+    if (bool) {
+      console.log("実行される10");
+    }
+*/
+
+    var elem = document.getElementById("test");
+
+    if(elem){
+      elem.addEventListener("click", function(){
+        alert("test1");
+      }, false);
+    }
+    console.log(elem.firstChild.nodeValue);
+
+    function changeColor1(id, font_color){
+      var elem = document.getElementById(id);
+      if(elem){
+        elem.style.color = font_color;
+      }
+    }
+
+    function changeColor2(id, font_color){
+      if(document.getElementById(id)){
+        document.getElementById(id).style.color = font_color;
+      }
+    }
+
+    changeColor1("box", "red");
+    changeColor2("test", "red");
+
+    // var num = 1;
+    // switch(num) {
+    //   case 1:
+    //     alert("1です");
+    //     break;
+    //   case 2:
+    //     alert("2です");
+    //     break;
+    //   case 3:
+    //   case 4:
+    //     alert("3か4です");
+    //     break;
+    //   default:
+    //     alert("defaultです");
+    //     break;
+    // }
+
+// switch文での比較は「厳密な比較」 ==ではなく===です。型も同じかどうかチェックした上での比較を行なっている。
+    var str = "2";
+
+    switch(str) {
+      case "test":
+        alert("testです");
+        break;
+      case 2:
+      case "2":
+        alert("2です");
+        break;
+      case 3:
+        alert("3です");
+        break;
+      default:
+        alert("defaultです");
+        break;
+    }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,273 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  body {
+    font-size: 13px;
+  }
+}
+
+#wrap {
+  width: 780px;
+  margin: 0 auto;
+  background-color: #4884e9;
+  border: solid 1px red;
+  overflow: hidden;
+}
+
+/*タブレット用のCSS*/
+@media screen and ( max-width:959px ) {
+  #wrap {
+    width: 600px;
+  }
+}
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  #wrap {
+    width: auto;
+    padding: 0 10px;
+    overflow: hidden;
+  }
+}
+
+#inner {
+  margin: 10px;
+}
+
+/*スマホ用のCSS*/
+ @media screen and (max-width:599px) {
+   #inner {
+     padding: 10px 0px;
+     margin: 10px;
+     overflow: hidden;
+   }
+ }
+
+#leftWrap {
+  width: 500px;
+  float:left;
+}
+
+/*タブレット用*/
+@media screen and ( max-width:959px ) {
+  #leftWrap {
+    width: 380px;
+  }
+}
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  #leftWrap {
+    width: auto;
+    float: none;
+  }
+}
+
+#rightWrap {
+  width: 250px;
+  float: right;
+  border: solid 1px black;
+  background-color: green;
+}
+
+/*タブレット用*/
+@media screen and ( max-width:959px ) {
+  #rightWrap {
+    width: 190px;
+  }
+}
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  #rightWrap {
+    width: auto;
+    margin-bottom:10px;
+    float: none;
+  }
+}
+
+#header {
+  margin-bottom: 10px;
+  background-color: #90eecb;
+  border: solid 1px black;
+}
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  #header {
+    width: auto;
+  }
+}
+
+#menu {
+  border: solid 1px black;
+  background-color: #90eecb
+}
+
+#footer {
+  border: solid 1px black;
+  background-color: #90eecb;
+}
+
+#firstWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  margin: 10px 0;
+}
+
+.box1 {
+  border: solid 1px black;
+  width: 102.5px;
+  margin: 10px;
+  float: left;
+  background-color: green;
+}
+
+/*タブレット用*/
+@media screen and ( max-width:959px ) {
+  .box1 {
+    width: 99.5px;
+    margin: 10px 43.7px;
+    float: left;
+  }
+}
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  .box1 {
+    width: auto;
+    margin: 10px;
+    float: none;
+  }
+}
+
+#secondWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  margin: 10px 0;
+}
+
+.box2 {
+  border: solid 1px black;
+  width: 144px;
+  margin: 10px;
+  float: left;
+  background-color: green;
+}
+
+/*タブレット用*/
+@media screen and ( max-width:959px ) {
+  .box2 {
+    width: 144px;
+    margin: 10px 118px;
+    float: left;
+  }
+}
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  .box2 {
+    width: auto;
+    margin: 10px;
+    float: none;
+  }
+}
+
+#thirdWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  margin: 10px 0;
+}
+
+.box3 {
+  border: solid 1px black;
+  width: 227px;
+  margin: 10px;
+  float: left;
+  background-color: green;
+}
+
+/*タブレット用*/
+@media screen and ( max-width:959px ) {
+  .box3 {
+    width: 227px;
+    margin: 10px 76.5px;
+    float: left;
+  }
+}
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  .box3 {
+    width: auto;
+    margin: 10px;
+    float: none;
+  }
+}
+
+#forthWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  margin: 10px 0;
+}
+
+.box4 {
+  border: solid 1px black;
+  width: 61px;
+  margin: 10px;
+  float: left;
+  background-color: green;
+}
+
+/*タブレット用*/
+@media screen and ( max-width:959px ) {
+  .box4 {
+    width: 58.4px;
+    margin: 10px 32.8px;
+    float: left;
+  }
+}
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  .box4 {
+    width: auto;
+    margin: 10px;
+    float: none;
+  }
+}
+
+#footer {
+  width: 500px;
+  margin-bottom: 10px;
+  float: left;
+}
+
+/*タブレット用*/
+@media screen and ( max-width:959px ) {
+  #footer {
+    width: 380px;
+  }
+}
+
+/*スマホ用*/
+@media screen and ( max-width:599px ) {
+  #footer {
+    width: auto;
+    float: none;
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+.clear hr {
+  display: none;
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>javascript基礎の総合課題5-1</title>
+  </head>
+  <body>
+    <h2>(5)(6)(7)ナンバーズ10</h2>
+    <p id="text">0から9の数値を入力してください</p>
+    <input type="text" id="input1" size="4"/>
+    <input type="text" id="input2" size="4"/>
+    <input type="text" id="input3" size="4"/>
+    <input type="text" id="input4" size="4"/>
+    <input type="text" id="input5" size="4"/><br />
+    <input type="text" id="input6" size="4"/>
+    <input type="text" id="input7" size="4"/>
+    <input type="text" id="input8" size="4"/>
+    <input type="text" id="input9" size="4"/>
+    <input type="text" id="input10" size="4"/><br>
+    <br>
+
+    <input type="button" id="button" value="当たっているかな"/><br>
+    <br>
+    <br>
+
+    <p>USER : <span id="showUser"></span></p>
+    <p>COM : <span id="showCom"></span></p>
+    <p>当選結果 : <span id="result"></span></p>
+    <br>
+    <h3 id="prob">-- 当選回数, 確率（1000回試行）--</h3>
+    <p id="straight">ストレート  ---------- </p>
+    <p id="box">ボックス  ------------- </p>
+    <p id="lose">ハズレ --------------- </p>
+
+    <script>
+    document.getElementById("button").addEventListener("click", function(){
+
+      //当選回数の配列、プロパティとなる
+      var grade = ["straight", "box"];
+      //各等の当選回数を保管しておく配列
+      var winCounts = {"straight": 0, "box": 0};
+
+      var lose = 0; //ハズレ回数
+
+      //エラーメッセージを毎回リセットする
+      var text = document.getElementById("text");
+      if(text.firstElementChild){
+        text.removeChild(text.firstElementChild)
+      }
+
+      //エラーメッセージを出す場所をつくる
+      var errorText = text.appendChild(document.createElement("p"));
+
+      //当選確率を毎回リセットする
+      for(var i in winCounts){
+        var elemOfGrade = document.getElementById(i);
+        if(elemOfGrade.firstElementChild){
+          elemOfGrade.removeChild(elemOfGrade.firstElementChild);
+        }
+      }
+
+      //ハズレ回数を毎回リセットする
+      var elemOfLose = document.getElementById("lose");
+      if(elemOfLose.firstElementChild){
+        elemOfLose.removeChild(elemOfLose.firstElementChild);
+      }
+
+
+      //ユーザー入力数値が入る配列
+      var user = [];
+
+      //0〜9であればuser配列に入れる
+      var num = 1;
+      while(num < 11){
+        var inputNum = Number(document.getElementById("input" + num).value);
+        if(0 <= inputNum && inputNum <= 9){
+          user.push(inputNum);
+          num++;
+        } else {
+          errorText.textContent = "異なる数字を入力してください";
+          errorText.style.color ="red";
+          throw "エラーが起きています";
+        }
+      }
+
+      //入力情報をブラウザへ
+      var showUser = document.getElementById("showUser");
+      showUser.innerHTML = user;
+
+
+      //1000回繰り返す
+      var kaisu = 0;
+      while(kaisu < 1000){
+
+
+        //コンピュータ側のランダム数字を作成
+        var com = [];
+        for(var i = 0; i < 10; i++){
+          com[i] = Math.floor(Math.random() *10);
+        }
+
+        //com情報をブラウザへ
+        var showCom = document.getElementById("showCom");
+        showCom.innerHTML = com;
+
+
+        //--------- 判定 -------------------------
+
+        //ストレート判定用flag
+        var flag = 0;
+
+        //ストレート判定で配列同士を比較
+        for(var i = 0; i < user.length; i++){
+          if(user[i] == com[i]){
+            flag += 1;
+          }
+        }
+
+
+
+
+
+        //flagに加算された数、配列の要素数が等しい時
+        var result;
+        if(flag == user.length){
+          result = "ストレート";
+          winCounts["straight"]++;
+          alert(kaisu+1 + "回目でストレート")
+        } else { //ボックス判定開始
+          var flag2 = 0; //ボックス判定用flags
+          var sortUser = user.slice().sort();//ストレートがfalseの時、ボックス判定に使う
+          var sortCom = com.slice().sort();
+          for(var i = 0; i < user.length; i++){
+            if(sortUser[i] == sortCom[i]){
+              flag2 += 1;
+            }
+          }
+          if(flag2 == 10){
+            result = "ボックス";
+            winCounts["box"]++;
+            alert(kaisu+1 + "回目でボックス")
+          } else {
+            result = "ハズレ";
+            lose++;
+          }
+        }
+
+        //当選結果表示
+        document.getElementById("result").innerHTML = result;
+
+
+        //---------------------------------------------------------------
+        console.log("---------------------------");
+        //コンソールに回数表示
+        kaisu++;
+        console.log(kaisu + "回目  user : com");
+        //コンソールに当選結果表示
+        console.log(result);
+        //コンソールに番号一覧表示
+        kakunin(user, com);
+        //-------------------------------------------------------------------
+
+      }; // while 1000回の終わり
+
+      //-----------------------------------------------------------------
+
+      //コンソールに番号一覧表示用の関数
+      function kakunin(user, com){
+        console.log(user);
+        console.log(com);
+      }
+
+      //当選確率を計算する関数
+      function calcProbOfWin(grade){
+        var result = grade / 1000 * 100;
+        // result = Math.round(result * 100) / 100;
+        return result.toFixed(2);
+      }
+
+      //各等当選回数の連想配列から確率を表示する
+      for(var i in winCounts){
+        var elem = document.getElementById(i).appendChild(document.createElement("span"));
+        elem.innerHTML = winCounts[i] + " 回, " + calcProbOfWin(winCounts[i]) + " %";
+      }
+
+      //ハズレ回数を表示する
+      elemOfLose.appendChild(document.createElement("span")).innerHTML = lose + " 回, " + calcProbOfWin(lose) + " %";
+
+
+
+
+    }, false);
+
+
+    </script>
+  </body>
+</html>

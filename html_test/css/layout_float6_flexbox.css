@@ -1,0 +1,112 @@
+#wrap {
+  width: 780px;
+  margin: 0 auto;
+  border: solid 1px black;
+  background-color: #c4dbee;
+}
+
+#inner {
+  margin: 10px;
+}
+
+#header {
+  border: solid 1px black;
+  background-color: green;
+  margin: 10px 0px;
+}
+
+#largeWrap {
+  width: 760px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*メニューカラム*/
+#leftWrap {
+  border: solid 1px black;
+  width: 120px;
+  background-color: green;
+}
+
+/*メインカラム*/
+#mainWrap {
+  width: 500px;
+}
+
+/*サイドカラム*/
+#rightWrap {
+  width: 120px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+.firstWrap {
+  border: solid 1px black;
+  background-color: green;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box1 {
+  width: 102.5px;
+  margin: 10px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+.secondWrap {
+  border: solid 1px black;
+  background-color: green;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box2 {
+  width: 144px;
+  margin: 10px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+.thirdWrap {
+  border: solid 1px black;
+  background-color: green;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.box3 {
+  width: 227px;
+  margin: 10px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+.forthWrap {
+  border: solid 1px black;
+  background-color: green;
+  display: flex;
+}
+
+.box4 {
+  width: 61px;
+  margin: 10px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+
+#footer {
+  margin: 10px 0px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+.clear {
+  clear: both;
+}
+.clear hr {
+  display: none;
+}

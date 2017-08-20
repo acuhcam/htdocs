@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>6.swich文とif文の課題2</p>
+
+    <ul style="font-size: 0;">
+      <li id="white" style="display: inline-block; background-color: #ffffff; font-size: 12px;">　　　　　　　　</li>
+      <li id="black" style="display: inline-block; background-color: #010101; font-size: 12px;">　　　　　　　　</li>
+      <li id="red" style="display: inline-block;  background-color: #ff0000; font-size: 12px;">　　　　　　　　</li>
+      <li id="green" style="display: inline-block;  background-color: #69ff00; font-size: 12px;">　　　　　　　　</li>
+      <li id="blue" style="display: inline-block;  background-color: #0029ff; font-size: 12px;">　　　　　　　　</li>
+    </ul>
+
+    <script>
+    //課題6
+    var white = document.getElementById("white");
+    var black = document.getElementById("black");
+    var red = document.getElementById("red");
+    var green = document.getElementById("green");
+    var blue = document.getElementById("blue");
+
+
+
+    white.addEventListener("click", function(){
+      var p = document.createElement("p");
+      var text = document.createTextNode("色 : white\nカラーコード : #ffffff");
+      document.body.appendChild(p).appendChild(text);
+    }, false);
+
+    black.addEventListener("click", function(){
+      var p = document.createElement("p");
+      var text = document.createTextNode("色 : black\nカラーコード : #010101");
+      document.body.appendChild(p).appendChild(text);
+    }, false);
+
+    red.addEventListener("click", function(){
+      var p = document.createElement("p");
+      var text = document.createTextNode("色 : red\nカラーコード : #ff0000");
+      document.body.appendChild(p).appendChild(text);
+    }, false);
+
+    green.addEventListener("click", function(){
+      var p = document.createElement("p");
+      var text = document.createTextNode("色 : green\nカラーコード : #69ff00");
+      document.body.appendChild(p).appendChild(text);
+    }, false);
+
+    blue.addEventListener("click", function(){
+      var p = document.createElement("p");
+      var text = document.createTextNode("色 : blue\nカラーコード : #0029ff");
+      document.body.appendChild(p).appendChild(text);
+    }, false);
+
+    </script>
+  </body>
+</html>

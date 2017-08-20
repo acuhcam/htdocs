@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>5.switch文とif文の課題1</p>
+    <p>居酒屋が4件並んでいます、<br>A君はB君がその中のある1件を選んだ時に奢ろうと思っています<br>その他の3件を選んだ場合は帰ろうと思っています<br><br>ただ奢ろうと思っていますが<br>B君の方がお金を持っていたら奢るのをやめようと決めています</p>
+
+    <p id="shop1">B君「居酒屋1に決めた」</p>
+    <p id="shop2">B君「居酒屋2に決めた」</p>
+    <p id="shop3">B君「居酒屋3に決めた」</p>
+    <p id="shop4">B君「居酒屋4に決めた」</p>
+    <p id="ansA1"></p>
+    <p id="ansB"></p>
+    <p id="ansA2"></p>
+
+    <script>
+    // 課題5
+
+    var shop1 = document.getElementById("shop1");
+    var shop2 = document.getElementById("shop2");
+    var shop3 = document.getElementById("shop3");
+    var shop4 = document.getElementById("shop4");
+    var ansA1 = document.getElementById("ansA1");
+    var ansA2 = document.getElementById("ansA2");
+    var moneyOfA = 6000;
+    var moneyOfB = 5000;
+
+    function goBackHome(){
+      ansA1.innerHTML = "A君「今日は帰るよ」";
+    }
+
+    document.getElementById("shop1").addEventListener("click", function(){
+      goBackHome();
+    }, false);
+
+    document.getElementById("shop2").addEventListener("click", function(){
+      goBackHome();
+    }, false);
+
+    document.getElementById("shop3").addEventListener("click", function(){
+      ansA1.innerHTML = "A君「B君今日いくら持ってる？」";
+      document.getElementById("ansB").innerHTML ="B君「" + moneyOfB + "円持ってるよ」";
+      if (moneyOfA > moneyOfB) {
+        ansA2.innerHTML = "A君「僕が奢るよ」";
+      } else {
+        ansA2.innerHTML = "A君「今日は割り勘ね」";
+      }
+    }, false);
+
+    document.getElementById("shop4").addEventListener("click", function(){
+      goBackHome();
+    }, false);
+
+    </script>
+  </body>
+</html>

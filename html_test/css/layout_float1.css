@@ -1,0 +1,117 @@
+body {
+  margin: 0 ; /* スペース */
+  padding: 0 ; /* 余白 */
+  font-size: 15px ; /* 文字サイズ */
+  line-height: 1.618 ; /* 行の高さ */
+}
+
+
+
+ #wrap {
+   width: 780px;
+   margin: 0 auto;
+   border: solid 1px black;
+   background-color: #c4dbee;
+ }
+
+
+
+
+#inner {
+  padding: 10px 0px;
+  margin: 10px;
+ }
+
+#header {
+  border: solid 1px black;
+  background-color: green;
+  margin: 10px 0px;
+}
+
+#menu {
+  margin: 10px 0px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+#largeWrap {
+   width: 760px;
+   float:left;
+}
+
+
+.firstWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  margin: 10px 0px;
+}
+
+.box1 {
+  border: solid 1px black;
+  width: 100px;
+  margin: 10px 43.75px;
+  float: left;
+  background-color: green;
+}
+
+
+.secondWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  margin: 10px 0;
+}
+
+.box2 {
+  border: solid 1px black;
+  width: 141.4px;
+  margin: 10px 54.6px;
+  float: left;
+  background-color: green;
+}
+
+
+
+.thirdWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  margin: 10px 0;
+}
+
+.box3 {
+  border: solid 1px black;
+  width: 224px;
+  margin: 10px 76.5px;
+  float: left;
+  background-color: green;
+}
+
+
+
+.forthWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  margin: 10px 0;
+}
+
+.box4 {
+  border: solid 1px black;
+  width: 58.7px;
+  margin: 10px 32.8px;
+  float: left;
+  background-color: green;
+}
+
+
+
+#footer {
+  border: solid 1px black;
+  margin: 10px 0px;
+  background-color: green;
+}
+
+.clear {
+  clear: both;
+}
+.clear hr {
+  display: none;
+}

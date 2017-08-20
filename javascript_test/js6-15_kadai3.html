@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>A君とB君が居酒屋にいます</p>
+    <p>A君「そろそろ次の店行く？」</p>
+    <p>B君「どうしようかな、今日は帰ろうかな」</p>
+    <p>A君「じゃあ次の店が開いてなかったら帰ろうよ」</p>
+    <p>B君「そうだね…、」</p>
+    <br>
+    <p>次の店前</p>
+    <br>
+    <p id="close">B君「開いていないよ！」</p>
+    <p id="answer1"></p>
+    <p id="open">B君「開いてるね…、」</p>
+    <p id="answer2"></p>
+
+
+
+    <script>
+      var close = document.getElementById("close");
+      var open = document.getElementById("open");
+      var answer1 = document.getElementById("answer1");
+      var answer2 = document.getElementById("answer2");
+
+      close.addEventListener("click", function(){
+        answer1.innerHTML = "A君「仕方ない今日は帰るか…」";
+        answer1.style.color = "red";
+      }, false);
+
+      open.addEventListener("click", function(){
+        answer2.innerHTML = "A君「よし飲もう！」";
+        answer2.style.color = "red";
+      }, false);
+
+    </script>
+  </body>
+</html>

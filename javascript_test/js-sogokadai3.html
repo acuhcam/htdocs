@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>javascript基礎の総合課題3</title>
+  </head>
+  <body>
+    <h2>(3)formで入力された年月日が1990/01/01～2010/12/31の範囲に入っているか？</h2>
+
+    <input type="text" id="year" value=""/><label for="year">年</label>
+    <input type="text" id="month" value=""><label for="month">月</label>
+    <input type="text" id="date" value=""/><label for="date">日</label>
+    <br>
+    <input type="button" id="button" value="範囲チェック"/><br>
+    結果:
+
+
+
+    <script>
+      document.getElementById("button").addEventListener("click", function(){
+
+        //入力から取得
+        var year = document.getElementById("year").value;
+        var month = document.getElementById("month").value;
+        var date = document.getElementById("date").value;
+
+        var firstDay = new Date();
+        firstDay = firstDay.setFullYear(1990, 1, 1);
+        console.log(firstDay);
+
+        var lastDay = new Date();
+        lastDay = lastDay.setFullYear(2010, 12, 31);
+        console.log(lastDay);
+
+        var inputDay = new Date();
+        inputDay = inputDay.setFullYear(year, month, date);
+        console.log(inputDay);
+
+        if (firstDay <= inputDay && inputDay <= lastDay){
+            document.body.appendChild(document.createElement("span")).textContent = "範囲内です";
+        } else {
+            document.body.appendChild(document.createElement("span")).textContent = "範囲外です";
+        }
+
+
+
+      }, false);
+
+
+    </script>
+  </body>
+</html>

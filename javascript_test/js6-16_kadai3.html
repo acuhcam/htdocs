@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>3.繰り返し処理(ループ処理)『for文』の課題3</p>
+    <p>初期値：1</p>
+    <p id="event">32回2を掛け算するが10回目ごとは掛け算をしない</p>
+    <hr>
+
+    <script>
+
+    var event = document.getElementById("event");
+    // var answer = document.getElementById("answer");
+
+    //通常の表示関数
+    function print(count, num){
+      //確認用
+      console.log(count + "回目")
+      // console.log(num)
+      var p = document.createElement("p");
+      var text = document.createTextNode(count + "回目 " + "答え：" + num);
+      console.log(p);
+      document.body.appendChild(p).appendChild(text);
+
+      // document.body.appendChild(document.createElement("span")).textContent = "aaa";
+    }
+
+
+    //10回毎用の表示関数
+    function printPer10(count, num){
+      //確認用
+      console.log(count + "回目")
+      // console.log(num)
+      var p = document.createElement("p");
+      var text = document.createTextNode(count + "回目 " + "答え：" + num + " ※掛け算しなかった");
+      // document.body.appendChild(document.createElement("span")).textContent = "aaa";
+      // div.textContent = "答えは：";
+      console.log(p);
+      // console.log(event);
+      document.body.appendChild(p).appendChild(text);
+    }
+
+    event.addEventListener("click", function(){
+      var num = 1;
+      for(var i = 1; i < 33; i++){
+        if(i % 10 == 0){
+          printPer10(i, num);
+          continue;
+        }
+        num *= 2;
+        print(i, num);
+
+      }
+    }, false)
+
+    </script>
+  </body>
+</html>

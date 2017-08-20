@@ -1,0 +1,255 @@
+/*p {
+  color: blue;
+  line-height:1.5;
+}*/
+
+/** {
+  color: blue;
+}*/
+
+/*p.sample1 {
+  color: red;
+}
+
+p#sample2 {
+  color: green;
+}*/
+
+/*p * {
+  color: red;
+}*/
+
+/*p.sample1 {
+  color: red;
+}
+
+.sample3 {
+  font-size: 20px;
+}*/
+
+/*p em {
+  color: blue;
+}*/
+
+/*一つ下の階層にある要素にのみ適用*/
+/*div.sample4 > p {
+  color: red;
+}*/
+
+/*隣接している要素に適用*/
+/*h1 + p {
+  color: brown;
+}*/
+
+/*ある要素の後にある要素にスタイルを適用する*/
+/*h1 ~ p {
+  color: yellow;
+}*/
+
+/*p:first-child {
+  font-weight: bold;
+  font-size: 40px;
+}*/
+
+/*(n)番目に現れる要素に適用する*/
+/*p:nth-of-type(5) {
+  font-weight: bold;
+  font-size: 32px;
+}*/
+
+
+/*うしろからn番目に現れる要素に適用*/
+/*p:nth-last-of-type(3) {
+  font-weight: bold;
+  font-size:40px;
+}*/
+
+/*最初に現れる文字にだけ適用する*/
+/*p:first-letter {
+  font-weight: bold;
+  font-size: 40px;
+}*/
+
+/*最初の行にだけ適用する*/
+/*p:first-line {
+  font-weight: bold;
+  font-size: 40px;
+}*/
+
+/*指定したセレクタに該当しない場合に適用する*/
+/*p:not(#sample) {
+  color: red;
+}*/
+
+
+/*特定の属性を持つ要素に適用する*/
+/*a[title] {
+  color: red;
+}*/
+
+/*特定の属性（値）を持つ要素に適用する*/
+/*a[title="タイトル3"] {
+  color: yellow;
+}*/
+
+/*属性の値が指定した文字で始まる場合に適用する*/
+/*a[title^="属性値タイトル3"] {
+  color: red;
+}*/
+
+/*属性の値が指定した文字で終わる場合に適用する*/
+/*a[title$="場合"] {
+  color: red;
+}*/
+
+
+/*属性の値が指定した文字を含む場合に適用する*/
+/*a[title*="タイトル"] {
+  color: red;
+}*/
+
+/*属性の値がハイフン区切りの値であり、その値が指定文字から始まる場合に適用する*/
+/*a[title |="test"] {
+  color: red;
+}*/
+
+/*リンクのアンカーで、未訪問と、訪問済に適用する*/
+/*a:link {
+  color: red;
+}
+a:visited {
+  color: green;
+}*/
+
+/*ユーザーによって行動、実行された場合に適用する*/
+/*a:hover {
+  color: yellow;
+}
+a:active {
+  color: red;
+}*/
+
+/*フォーカス*/
+/*.sample1:focus {
+  color: green;
+}
+.sample2:focus:hover {
+  color: green;
+}
+.sample3:focus:link {
+  color: red;
+}
+.sample3:focus:visited {
+  color: yellow;
+}*/
+
+
+/*div:target {
+  color: red;
+}*/
+
+/*有効なCSS識別子の言語情報を持つ要素に適用する*/
+/*:lang(ja) {
+  color: red;
+}*/
+
+/*状態に対してスタイルを適用する*/
+/*input:enabled {
+  background-color: blue;
+}
+input:disabled {
+  background-color: yellow;
+}*/
+
+/*選択している要素に対して適用される*/
+/*:checked {
+  width: 100px;
+  height: 100px;
+}*/
+
+/*inheritで強制的に値を継承する*/
+/*div.sample3 {
+  border:1px solid #000000;
+}
+p.sample4 {
+  border:inherit;
+}*/
+
+/*相対的な値の継承*/
+/*div.sample5 {
+  font-size: 90%;
+}
+p.sample6 {
+  font-size: 90%;
+}*/
+
+
+
+/*4-9*/
+
+
+/*p {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}*/
+
+/*親要素のwidthを100pxに。子にはけいしょうされない*/
+/*.oya {
+
+  width: 100px;
+}*/
+
+/*何も指定しない場合は初期値でwidthはauto。横いっぱいに広がるが、親要素以上に大きくなることはない。
+position: absoluteに指定されている時なども,autoでも横いっぱいに広がらない場合もある*/
+/*p {
+  background-color: orange;
+}*/
+
+/*height: autoはたていっぱいには広がらない。文字や画像などの要素のぶんだけ高くなる
+指定ない場合、heightは初期値でauto*/
+/*#oya {
+  background-color: gray;
+}*/
+
+/*ピクセル数での指定。pxはいわゆる絶対値の指定*/
+/*#sample img {
+  width: 500px;
+  height: 200px;
+}*/
+
+/*widthを%で指定すると、要素の幅は可変になる。子要素の幅は親要素の幅に対する比率で決まる。*/
+/*親の親　100%*/
+/*#oyanooya {
+  width: 100%;
+  background: gray;
+}*/
+
+/*親は、親の親の50%*/
+/*#oya {
+  width: 50%;
+  background: red;
+}*/
+
+/*子は、親の50%なので、親の親の25%*/
+/*#oya p {
+  width: 50%;
+  background: orange;
+}*/
+
+
+/*100%だとwidthにはpaddingとborderの分が含みません*/
+/*width:100%;*/
+
+/*autoだとwidthの中にpaddingとborderが含まれます*/
+/*width:auto;*/
+
+.sample1 {
+margin:10px; padding:10px; border:5px solid black;
+background-color:lightgray;
+}
+.sample2 {
+margin:10px; padding:10px; border:5px solid black;
+background-color:lightgray;
+line-height:60px;
+}

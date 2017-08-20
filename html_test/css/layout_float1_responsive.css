@@ -1,0 +1,231 @@
+body {
+  margin: 0 ; /* スペース */
+  padding: 0 ; /* 余白 */
+  font-size: 15px ; /* 文字サイズ */
+  line-height: 1.618 ; /* 行の高さ */
+}
+
+/*スマホ用のCSS*/
+ @media screen and ( max-width:599px ) {
+   body {
+     font-size: 13px;
+   }
+ }
+
+ #wrap {
+   width: 780px;
+   margin: 0 auto;
+   border: solid 1px black;
+   background-color: #c4dbee;
+ }
+
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  #wrap {
+    width: auto;
+    padding: 0 10px; /*左右の余白*/
+  }
+}
+
+/*タブレット用のCSS*/
+@media screen and ( max-width:959px ) {
+  #wrap {
+    width: 600px;
+  }
+}
+
+
+
+#inner {
+  padding: 10px 0px;
+  margin: 10px;
+ }
+
+/*スマホ用のCSS*/
+ @media screen and (max-width:599px) {
+   #inner {
+     padding: 10px 0px;
+     margin: 10px;
+     overflow: hidden;
+   }
+ }
+
+#header {
+  border: solid 1px black;
+  background-color: green;
+  margin: 10px 0px;
+}
+
+#menu {
+  margin: 10px 0px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+#largeWrap {
+   width: 760px;
+   float:left;
+}
+
+/*タブレット用*/
+@media screen and ( max-width:959px ) {
+  #largeWrap {
+    width: 580px;
+  }
+}
+
+/*スマホ用CSS*/
+@media screen and ( max-width:599px ) {
+  #largeWrap {
+    width: auto;
+    float: none;
+    /*overflow: hidden;*/
+  }
+}
+
+
+.firstWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  margin: 10px 0px;
+}
+
+.box1 {
+  border: solid 1px black;
+  width: 100px;
+  margin: 10px 43.75px;
+  float: left;
+  background-color: green;
+}
+
+/*タブレット用*/
+@media screen and ( max-width:959px ) {
+  .box1 {
+    width: 77.4px;
+    margin: 10px 32.5px;
+    float: left;
+  }
+}
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  .box1 {
+    border: solid 1px black;
+    width: auto;
+    margin: 10px;
+    float: none;
+  }
+}
+
+.secondWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  margin: 10px 0;
+}
+
+.box2 {
+  border: solid 1px black;
+  width: 141.4px;
+  margin: 10px 54.6px;
+  float: left;
+  background-color: green;
+}
+
+/*タブレット用*/
+@media screen and ( max-width:959px ) {
+  .box2 {
+    width: 138.4px;
+    margin: 10px 26.1px;
+    float: left;
+  }
+}
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  .box2 {
+    border: solid 1px black;
+    width: auto;
+    margin: 10px;
+    float: none;
+  }
+}
+
+.thirdWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  margin: 10px 0;
+}
+
+.box3 {
+  border: solid 1px black;
+  width: 224px;
+  margin: 10px 76.5px;
+  float: left;
+  background-color: green;
+}
+
+/*タブレット用*/
+@media screen and ( max-width:959px ) {
+  .box3 {
+    width: 221px;
+    margin: 10px 33px;
+    float: left;
+  }
+}
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  .box3 {
+    border: solid 1px black;
+    width: auto;
+    margin: 10px;
+    float: none;
+  }
+}
+
+.forthWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  margin: 10px 0;
+}
+
+.box4 {
+  border: solid 1px black;
+  width: 58.7px;
+  margin: 10px 32.8px;
+  float: left;
+  background-color: green;
+}
+
+/*タブレット用*/
+@media screen and ( max-width:959px ) {
+  .box4 {
+    width: 221px;
+    margin: 10px 33px;
+    float: left;
+  }
+}
+
+/*スマホ用のCSS*/
+@media screen and ( max-width:599px ) {
+  .box4 {
+    border: solid 1px black;
+    width: auto;
+    margin: 10px;
+    float: none;
+  }
+}
+
+#footer {
+  border: solid 1px black;
+  margin: 10px 0px;
+  background-color: green;
+}
+
+.clear {
+  clear: both;
+}
+.clear hr {
+  display: none;
+}

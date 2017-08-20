@@ -1,0 +1,61 @@
+.outbox {
+  overflow: hidden;
+  zoom: 1;
+}
+ul.outbox li {
+  float: left;
+}
+
+/*ここからデモ用の装飾*/
+ul {
+	background: #CCCCCC;
+	border: 1px #000000 solid;
+	margin: 0 auto;
+	padding: 20px;
+	width: 900px;
+	text-align: center;
+}
+
+ul li {
+	width: 15%;
+	font-size: 14px;
+}
+
+ul li a {
+	display: block;
+	padding: 2em 0;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+ul li a span {
+	display: block;
+	font-size: 11px;
+}
+
+ul li:first-child {
+	background: #999999;
+}
+
+ul li:nth-child(2) {
+	background: #777777;
+}
+
+ul li:nth-child(3) {
+	background: #555555;
+}
+
+ul li:nth-child(4) {
+	background: #333333;
+}
+
+ul li:nth-child(5) {
+	background: #111111;
+}
+
+li.next {
+	width: 300px;
+	height: 100px;
+	margin: 1em;
+	padding: 1em;
+}

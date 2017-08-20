@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+    function myRound(val, precision){
+
+      //小数点を移動させる為の数を10のべき乗で求める
+		//例) 小数点以下2桁の場合は 100 をかける必要がある
+       var digit = Math.pow(10, precision);
+
+      //四捨五入したい数字に、digitを掛けて小数点を移動
+       var val = val * digit;
+
+      //roundを使って四捨五入
+      val = Math.round(val);
+
+      //移動させた小数点をdigitで割ることで元に戻す
+      val = val / digit;
+
+      return val;
+    }
+
+    //四捨五入したい値
+    var num = 3.14159;
+
+    //小数点以下2桁を取得する
+    var result = myRound(num, 2);
+
+    //結果表示
+    // alert(result);
+
+    var calcbox = 3.141592;
+    console.log(Math.ceil(calcbox));
+    console.log(Math.floor(calcbox));
+
+    var a = 1;
+    var b = 2;
+    var c = 3;
+    var d = 4;
+    var e = 5;
+    var f = 6;
+    var g = 7;
+
+    console.log(Math.max(a,b,c,d,e,f,g));
+    console.log(Math.min(a,b,c,d,e,f,g));
+
+    var num2 = 10;
+    for(var i = 0; i < num2; i++){
+      console.log(Math.random());
+    }
+
+    </script>
+  </body>
+</html>

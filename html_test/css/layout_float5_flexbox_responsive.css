@@ -1,0 +1,291 @@
+
+
+
+#wrap {
+  width: 780px;
+  margin: 0 auto;
+  border: solid 1px black;
+  background-color: #c4dbee;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+ #wrap {
+   width: 600px;
+ }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  #wrap {
+    width: auto;
+
+  }
+}
+
+
+#inner {
+  margin: 10px;
+}
+
+#header {
+  border: solid 1px black;
+  background-color: green;
+  margin: 10px 0px;
+}
+
+
+#largeWrap {
+  width: 760px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  #largeWrap {
+    width: 580px;
+    flex-direction: column-reverse;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+ #largeWrap {
+   width: auto;
+   flex-direction: column-reverse;
+ }
+}
+
+#rightWrap {
+  width: 500px;
+  /*background-color: red;*/
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  #rightWrap {
+    width: auto;
+
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+ #rightWrap {
+   width: auto;
+ }
+}
+
+
+#leftWrap {
+  border: solid 1px black;
+  width: 250px;
+  background-color: green;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  #leftWrap {
+    width: auto;
+    margin-bottom: 10px;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+ #leftWrap {
+   width: auto;
+   margin-bottom: 10px;
+ }
+}
+
+.firstWrap {
+  border: solid 1px black;
+  background-color: green;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  .firstWrap {
+    flex-direction: column;
+    /*justify-content: center;*/
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .firstWrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.box1 {
+  width: 102.5px;
+  word-wrap:break-word;
+  /*width: auto;*/
+  margin: 10px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  .box1 {
+    width: auto;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .box1 {
+    width: auto;
+  }
+}
+
+
+
+.secondWrap {
+  border: solid 1px black;
+  background-color: green;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  .secondWrap {
+    flex-direction: column;
+    /*justify-content: center;*/
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .secondWrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.box2 {
+  border: solid 1px black;
+  width: 144px;
+  word-wrap:break-word;
+  margin: 10px;
+  background-color: white;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  .box2 {
+    width: auto;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .box2 {
+    width: auto;
+  }
+}
+
+.thirdWrap {
+  border: solid 1px black;
+  background-color: green;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  .thirdWrap {
+    flex-direction: column;
+    /*justify-content: center;*/
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .thirdWrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.box3 {
+  border: solid 1px black;
+  width: 227px;
+  word-wrap:break-word;
+  margin: 10px;
+  background-color: white;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  .box3 {
+    width: auto;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .box3 {
+    width: auto;
+  }
+}
+
+.forthWrap {
+  border: solid 1px black;
+  background-color: green;
+  display: flex;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  .forthWrap {
+    flex-direction: column;
+    /*justify-content: center;*/
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .forthWrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.box4 {
+  border: solid 1px black;
+  width: 61px;
+  word-wrap:break-word;
+  margin: 10px;
+  background-color: white;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  .box4 {
+    width: auto;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .box4 {
+    width: auto;
+  }
+}
+
+
+#footer {
+  border: solid 1px black;
+  margin: 10px 0px;
+  background-color: green;
+}

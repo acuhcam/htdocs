@@ -1,0 +1,286 @@
+/*タブレット用*/
+@media screen and (max-width:959px) {
+
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+
+}
+
+
+#wrap {
+  width: 780px;
+  margin: 0 auto;
+  border: solid 1px black;
+  background-color: #c4dbee;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  #wrap {
+    width: 600px;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  #wrap {
+    width: auto;
+  }
+}
+
+#inner {
+  margin: 10px;
+}
+
+#header {
+  border: solid 1px black;
+  background-color: green;
+  margin: 10px 0px;
+}
+
+#largeWrap {
+  width: 760px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  #largeWrap {
+    width: auto;
+    flex-direction: column;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  #largeWrap {
+    width: auto;
+    flex-direction: column;
+  }
+}
+
+
+/*メニューカラム*/
+#leftWrap {
+  border: solid 1px black;
+  width: 120px;
+  background-color: green;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  #leftWrap {
+    width: auto;
+    margin-bottom: 10px;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  #leftWrap {
+    width: auto;
+    margin-bottom: 10px;
+  }
+}
+
+/*メインカラム*/
+#mainWrap {
+  width: 500px;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  #mainWrap {
+    width: auto;
+    margin-bottom: 10px;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  #mainWrap {
+    width: auto;
+    margin-bottom: 10px;
+  }
+}
+
+/*サイドカラム*/
+#rightWrap {
+  width: 120px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  #rightWrap {
+    width: auto;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  #rightWrap {
+    width: auto;
+  }
+}
+
+
+.firstWrap {
+  border: solid 1px black;
+  background-color: green;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  .firstWrap {
+
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  .firstWrap {
+    flex-direction: column;
+  }
+}
+
+.box1 {
+  width: 102.5px;
+  margin: 10px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  .box1 {
+    width: auto;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+
+}
+
+.secondWrap {
+  border: solid 1px black;
+  background-color: green;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+ .secondWrap {
+   flex-direction: column;
+ }
+}
+
+.box2 {
+  width: 144px;
+  margin: 10px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  .box2 {
+    width: auto;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+
+}
+
+
+.thirdWrap {
+  border: solid 1px black;
+  background-color: green;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+ .thirdWrap {
+   flex-direction: column;
+ }
+}
+
+.box3 {
+  width: 227px;
+  margin: 10px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  .box3 {
+    width: auto;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+
+}
+
+.forthWrap {
+  border: solid 1px black;
+  background-color: green;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+ .forthWrap {
+   flex-direction: column;
+ }
+}
+
+.box4 {
+  width: 61px;
+  margin: 10px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+/*タブレット用*/
+@media screen and (max-width:959px) {
+  .box4 {
+    width: auto;
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+
+}
+
+#footer {
+  margin: 10px 0px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+.clear {
+  clear: both;
+}
+.clear hr {
+  display: none;
+}

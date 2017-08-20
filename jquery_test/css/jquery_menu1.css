@@ -1,0 +1,15 @@
+
+.hoge3A{
+  float:left;
+  width:470px;
+}
+
+.red{
+  float:right;
+  width:250px;
+  height:100px;
+  background:#FC9;
+  display:table-cell;
+  vertical-align:middle;
+  color:#FFF;
+}

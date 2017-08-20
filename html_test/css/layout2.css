@@ -1,0 +1,31 @@
+body {
+  text-align: center;
+}
+
+#wrap {
+  width: 780px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+#inner {
+  margin: 0 10px
+}
+
+#mainWrap {
+  width: 480px;
+  float: left;
+}
+
+#sideWrap {
+  width: 260px;
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.clear hr {
+  display: none;
+}

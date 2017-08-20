@@ -1,0 +1,238 @@
+/*スマホ用CSS*/
+/*@media screen and ( max-width:599px ) {
+
+}*/
+
+/*タブレット用CSS*/
+/*@media screen and ( max-width:959px ) {
+
+}*/
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 15px ;
+}
+
+/*スマホ用CSS*/
+/*@media screen and ( max-width:599px ) {
+  body {
+    font-size: 13px;
+  }
+}*/
+
+
+#wrap {
+  width: 780px;
+  margin: 0 auto;
+  border: solid 1px black;
+  background-color: #ebf2d8;
+}
+
+/*タブレット用CSS*/
+@media screen and ( max-width:959px ) {
+  #wrap {
+    /*width: 600px;*/
+    width: auto;
+  }
+}
+
+/*スマホ用CSS*/
+@media screen and ( max-width:599px ) {
+  #wrap {
+    width: auto;
+  }
+}
+
+
+
+
+#inner {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  margin: 10px;
+}
+
+/*スマホ用*/
+@media screen and (max-width:599px) {
+  #inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+#header {
+  border: solid 1px black;
+  background-color: #c3e6f1;
+  margin-bottom: 10px;
+}
+
+#menu {
+  border: solid 1px black;
+  background-color: #c3e6f1;
+  margin-bottom: 10px;
+}
+
+#largeWrap {
+  /*width: 760px;*/
+
+}
+
+/*スマホ用CSS*/
+/*@media screen and ( max-width:599px ) {
+  #largeWrap {
+    width: auto;
+  }
+}*/
+
+/*タブレット用*/
+/*@media screen and ( max-width:959px ) {
+  #largeWrap {
+    width: 580px;
+  }
+}*/
+
+
+#firstWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+/*スマホ用*/
+@media screen and ( max-width:599px ) {
+  #firstWrap {
+    flex-direction: column;
+  }
+}
+
+/*タブレット用*/
+/*@media screen and ( max-width:959px ) {
+  #firstWrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}*/
+
+
+
+#secondWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*スマホ用*/
+@media screen and ( max-width:599px ) {
+  #secondWrap {
+    flex-direction: column;
+  }
+}
+
+#thirdWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*スマホ用*/
+@media screen and ( max-width:599px ) {
+  #thirdWrap {
+    flex-direction: column;
+  }
+}
+
+#forthWrap {
+  border: solid 1px black;
+  background-color: #def777;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /*align-content: space-around;*/
+  align-items: center;
+}
+
+/*スマホ用*/
+@media screen and ( max-width:599px ) {
+  #forthWrap {
+    flex-direction: column;
+  }
+}
+
+/*スマホ用*/
+/*@media screen and ( max-width:599px ) {
+  #firstWrap {
+    display: flex;
+    flex-direction: column;
+  }
+}*/
+
+
+.box1 {
+  /*width: 150px;*/
+  margin: 10px 0;
+  border: solid 1px black;
+  background-color: red;
+}
+
+/*スマホ用のCSS*/
+/*@media screen and ( max-width:599px ) {
+  .box1 {
+
+    border: solid 1px black;
+    margin: 10px;
+  }
+}*/
+
+.box2 {
+  /*width: 220px;*/
+  margin: 10px 0;
+  border: solid 1px black;
+  background-color: red;
+}
+
+.box3 {
+  /*width: 360px;*/
+  margin: 10px 0;
+  border: solid 1px black;
+  background-color: red;
+}
+
+.box4 {
+  /*width: 100px;*/
+  margin: 10px 0;
+  border: solid 1px black;
+  background-color: red;
+}
+
+/*スマホ用*/
+@media screen and ( max-width:599px ) {
+  .box4 {
+    width: calc(50% - 10px);
+  }
+}
+
+#footer {
+  border: solid 1px black;
+  background-color: #c3e6f1;
+}

@@ -1,0 +1,115 @@
+#wrap {
+  width: 780px;
+  margin: 0 auto;
+  border: solid 1px black;
+  background-color: #c4dbee;
+}
+
+#inner {
+ padding: 10px 0px;
+ margin: 10px;
+}
+
+#header {
+  border: solid 1px black;
+ background-color: green;
+ margin: 10px 0px;
+}
+
+/*メインカラムとサイドカラム*/
+#largeWrap {
+  width: 630px;
+  float:right;
+}
+
+/*メニューカラム*/
+#leftWrap {
+  border: solid 1px black;
+ width: 120px;
+ float: left;
+ background-color: green;
+}
+
+/*メインカラム*/
+#mainWrap {
+  width: 500px;
+  float: left;
+}
+
+/*サイドカラム*/
+#rightWrap {
+  width: 120px;
+  float: right;
+  border: solid 1px black;
+  background-color: green;
+}
+
+.firstWrap {
+  border: solid 1px black;
+ background-color: green;
+ /*margin: 10px 0;*/
+}
+
+.box1 {
+ width: 102.5px;
+ margin: 10px;
+ float: left;
+ border: solid 1px black;
+ background-color: white;
+}
+
+.secondWrap {
+  border: solid 1px black;
+ background-color: green;
+ margin: 10px 0;
+}
+
+.box2 {
+ width: 144px;
+ margin: 10px;
+ float: left;
+ border: solid 1px black;
+ background-color: white;
+}
+
+.thirdWrap {
+  border: solid 1px black;
+ background-color: green;
+ margin: 10px 0;
+}
+
+.box3 {
+ width: 227px;
+ margin: 10px;
+ float: left;
+ border: solid 1px black;
+ background-color: white;
+}
+
+.forthWrap {
+  border: solid 1px black;
+ background-color: green;
+ /*margin: 10px 0;*/
+}
+
+.box4 {
+ width: 61px;
+ margin: 10px;
+ float: left;
+ border: solid 1px black;
+ background-color: white;
+}
+
+
+#footer {
+ margin: 10px 0px;
+ border: solid 1px black;
+ background-color: green;
+}
+
+.clear {
+ clear: both;
+}
+.clear hr {
+ display: none;
+}

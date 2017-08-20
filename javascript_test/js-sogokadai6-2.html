@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>javascript基礎の総合課題6-2</title>
+</head>
+<body>
+  <h2>(6)(7)ロト7</h2>
+  <p id="text">1から43から異なる7つの数字を入力してください</p>
+  <input type="text" id="input1" size="4"/>
+  <input type="text" id="input2" size="4"/>
+  <input type="text" id="input3" size="4"/>
+  <input type="text" id="input4" size="4"/>
+  <input type="text" id="input5" size="4"/>
+  <input type="text" id="input6" size="4"/>
+  <input type="text" id="input7" size="4"/><br>
+  <br>
+
+  <input type="button" id="button" value="当たっているかな"/><br>
+  <br>
+  <br>
+  <p>USER : <span id="showUser"></span></p>
+  <p>COM : <span id="showCom"></span>　ボーナス数字 : <span id="showBonu"></span></p>
+  <p>当選結果 : <span id="result"></span></p>
+  <br>
+  <h3 id="prob">-- 当選回数, 確率（1000回試行）--</h3>
+  <p id="first">1 等  ---------- </p>
+  <p id="second">2 等  ---------- </p>
+  <p id="third">3 等  ---------- </p>
+  <p id="forth">4 等  ---------- </p>
+  <p id="fifth">5 等  ---------- </p>
+  <p id="sixth">6 等  ---------- </p>
+  <p id="lose">ハズレ -------- </p>
+
+
+
+
+  <script>
+
+  //入力された数字が重複していた場合、user配列には入れずに、エラー文を出してやり直しさせる
+  //ボーナス番号はcom配列を作った後に末尾の二つでつくる
+  //2等, 6等がボーナス番号を使う。1等3等4等5等はボーナス番号を無視できる
+  //入力配列と当選番号配列の二つが必要
+
+
+  document.getElementById("button").addEventListener("click", function(){
+
+    //当選回数の配列、プロパティとなる
+    var grade = ["first", "second", "third", "forth", "fifth", "sixth"];
+    //各等の当選回数を保管しておく配列
+    var winCounts = {"first": 0, "second": 0, "third": 0, "forth": 0, "fifth": 0, "sixth": 0};
+
+    var lose = 0; //ハズレ回数
+
+
+    //エラーメッセージを毎回リセットする
+    var text = document.getElementById("text");
+    if(text.firstElementChild){
+      text.removeChild(text.firstElementChild)
+    }
+
+    //エラーメッセージを出す場所をつくる
+    var errorText = text.appendChild(document.createElement("p"));
+
+    //当選確率を毎回リセットする
+    for(var i in winCounts){
+      var elemOfGrade = document.getElementById(i);
+            if(elemOfGrade.firstElementChild){
+              elemOfGrade.removeChild(elemOfGrade.firstElementChild);
+          }
+        }
+
+    //ハズレ回数を毎回リセットする
+    var elemOfLose = document.getElementById("lose");
+    if(elemOfLose.firstElementChild){
+      elemOfLose.removeChild(elemOfLose.firstElementChild);
+    }
+
+
+
+
+    //ユーザー入力数値が入る配列
+    var user = [];
+
+    //重複がなければuser配列に入れる
+    var num1 = 1;
+    while(num1 < 8){
+      var inputNum = Number(document.getElementById("input" + num1).value);
+      var flag = user.indexOf(inputNum);
+      if(flag < 0){
+        user.push(inputNum);
+        num1++;
+        // console.log("user"+ user);
+      } else {
+        errorText.textContent = "異なる数字を入力してください";
+        errorText.style.color ="red";
+        throw "エラーが起きています";
+        // break;
+      }
+    }
+
+    //1000回繰り返す
+    var kaisu = 0;
+    while(kaisu < 1000){
+
+
+      //1~43の配列を生成
+      var index = [];
+      for(var i = 0; i < 43; i++){
+        index.push(i + 1);
+      }
+      var com = [];
+
+
+      //com用の重複のない1〜43のランダム配列(要素数7) + ボーナス数字2つ
+      var num2 = 1;
+      while(num2 < 9){
+        var randomNum = Math.floor(Math.random() * 43);
+        var flag = com.indexOf(index[randomNum]);
+        if(flag < 0){
+          com.push(index[randomNum]);
+          num2++;
+        } else {
+          continue;
+        }
+      }
+
+      //ランダム配列comの末尾からボーナス数字の2つを取得する
+      var bonusNum = com.splice(com.length - 2, 2);
+
+
+      //ボーナス判定用フラグ
+      var bonus1 = false;
+      var bonus2 = false;
+
+      //一致個数
+      var count = 0;
+      for(var i = 0; i < user.length; i++){
+        for(var k = 0; k < com.length; k++){
+          if(user[i] == com[k]){
+            count++;
+          }
+        }
+        if(user[i] == bonusNum[0]){
+          bonus1 = true;
+        }
+        if(user[i] == bonusNum[1]){
+          bonus2 = true;
+        }
+      }
+      var result;
+      if(count == 7){
+        result = "1等当選しました";
+        winCounts["first"]++;
+      } else if(count == 6){
+        if(bonus1 || bonus2){
+          result = "2等当選しました";
+          winCounts["second"]++;
+        } else {
+          result = "3等当選しました";
+          winCounts["third"]++;
+        }
+      } else if(count == 5){
+        result = "4等当選しました";
+        winCounts["forth"]++;
+      } else if(count == 4){
+        result = "5等当選しました";
+        winCounts["fifth"]++;
+      } else if(count == 3 && (bonus1 || bonus2) ){
+        result = "6等当選しました"
+        winCounts["sixth"]++;
+      } else {
+        result = "ハズレ";
+        lose++
+      }
+
+      //ブラウザに当選結果表示
+      document.getElementById("result").textContent = result;
+
+      //---------------------------------------------------------------
+      console.log("---------------------------");
+      //コンソールに回数表示
+      kaisu++;
+      console.log(kaisu + "回目  user : com : bonusNum");
+      //コンソールに当選結果表示
+      console.log(result);
+      //コンソールに番号一覧表示
+      kakunin(user, com, bonusNum);
+      //-------------------------------------------------------------------
+
+
+      //選択数字の表示
+      document.getElementById("showUser").innerHTML = user;
+      document.getElementById("showCom").innerHTML = com;
+      document.getElementById("showBonu").innerHTML = bonusNum;
+
+
+
+    }; // while 1000回の終わり
+
+    //-----------------------------------------------------------------
+
+    //コンソールに番号一覧表示用の関数
+    function kakunin(user, com, bonusNum){
+      console.log(user);
+      console.log(com);
+      console.log(bonusNum);
+    }
+
+    //当選確率を計算する関数
+    function calcProbOfWin(grade){
+      var result = grade / 1000 * 100;
+      // result = Math.round(result * 100) / 100;
+      return result.toFixed(2);
+    }
+
+    //各等当選回数の連想配列から確率を表示する
+    for(var i in winCounts){
+      var elem = document.getElementById(i).appendChild(document.createElement("span"));
+      elem.innerHTML = winCounts[i] + " 回, " + calcProbOfWin(winCounts[i]) + " %";
+    }
+
+    //ハズレ回数を表示する
+    elemOfLose.appendChild(document.createElement("span")).innerHTML = lose + " 回, " + calcProbOfWin(lose) + " %";
+
+
+  }, false);
+  </script>
+
+
+
+</body>
+</html>

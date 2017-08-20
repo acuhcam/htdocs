@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p id="output" class="output"></p>
+    <p id="error" class="error none"></p>
+
+    <p><button id="fire" class="button">実行</button></p>
+    <p><button id="reset" class="button">リセット</button></p>
+
+    <script>
+    //配列
+    var records = ["こんにちは", "おはよう", "こんばんは", "さようなら"];
+
+    //実行
+    document.getElementById("fire").addEventListener("click", function(){
+      try{
+        //配列からランダムで値を選択
+        //random()で、配列要素数-1の、添え字と同じ数ができる
+        var rand = records[Math.floor(Math.random() * records.length)];
+
+        //結果を表示
+        document.getElementById("output").textContent = rand;
+
+        //コンソールで内容を出力
+        console.log(rand);
+
+        //エラーを表示
+        //error noneは「エラーなし」
+        errorElement.className = "error none";
+        console.log(errorElement.className);
+
+      } catch(msg) {
+        //エラーを表示
+        errorElement.className = "error";
+        errorElement.textContent = msg;
+        console.log(msg);
+      }
+    });
+
+    //リセット
+    document.getElementById("reset").addEventListener("click", function(){
+      initialize();
+    });
+
+    //エラー表示用の要素
+    var errorElement = document.getElementById("error");
+
+    //初期化
+    function initialize(){
+      //結果エリアを空にする
+      document.getElementById("output").textContent = "";
+    }
+
+    //初期化
+    initialize();
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>javascript基礎の総合課題6-1</title>
+  </head>
+  <body>
+<h2>(6)ロト6</h2>
+<p>1から43から異なる6つの数字を入力してください</p>
+<input type="text" id="input1" size="4"/>
+<input type="text" id="input2" size="4"/>
+<input type="text" id="input3" size="4"/>
+<input type="text" id="input4" size="4"/>
+<input type="text" id="input5" size="4"/>
+<input type="text" id="input6" size="4"/><br>
+<br>
+
+<input type="button" id="button" value="当たっているかな"/><br>
+<br>
+<br>
+<p>USER : <span id="showUser"></span></p>
+<p>COM : <span id="showCom"></span></p>
+<p>当選結果 : <span id="result"></span></p>
+    <script>
+
+    //入力された数字が重複していた場合、処理を止めて、やり直しさせる
+    //ボーナス番号は変数
+    //1等2等がボーナス番号を使う。3等4等5等はボーナス番号は無視できると思う.
+    //入力配列と当選番号配列の二つが必要
+document.getElementById("button").addEventListener("click", function(){
+
+  //ユーザーの持つ番号6つ
+  var input1 = Number(document.getElementById("input1").value);
+  var input2 = Number(document.getElementById("input2").value);
+  var input3 = Number(document.getElementById("input3").value);
+  var input4 = Number(document.getElementById("input4").value);
+  var input5 = Number(document.getElementById("input5").value);
+  var input6 = Number(document.getElementById("input6").value);
+  var user = [input1, input2, input3, input4, input5, input6];
+
+  //comの持つ当選番号6つ
+  var bonus = false;
+  var bonusNum = Math.floor(Math.random() * 9) + 1; //ボーナス番号 1~9
+  var com = [];
+  for(var i = 0; i < 6; i++){
+    com[i] = Math.floor(Math.random() * 42) + 1;
+  }
+
+  //一致個数
+  var count = 0;
+  for(var i = 0; i < user.length; i++){
+    for(var k = 0; k < com.length; k++){
+      if(user[i] == com[k]){
+        count++;
+      } else if(user[i] == bonusNum){
+        bonus = true;
+      }
+    }
+  }
+  if(count == 6){
+    result = "1等当選しました";
+  } else if(count == 5){
+    result = "3等当選しました";
+  } else if(count == 4){
+    result = "4等当選しました";
+  } else if(count == 3){
+    resulr = "5等当選しました";
+  } else {
+    result = "ハズレ";
+  }
+
+
+
+
+  //選択数字の表示
+  document.getElementById("showUser").textContent = user;
+  document.getElementById("showCom").textContent = com;
+
+  //選択数字コンソール確認用
+  console.log("-------確認---------");
+  console.log(user);
+  console.log(com);
+  console.log(bonusNum);
+
+
+  var result = document.getElementById("result");
+
+
+
+
+}, false);
+
+    </script>
+  </body>
+</html>

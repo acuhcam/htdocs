@@ -1,0 +1,288 @@
+#wrap {
+  width: 780px;
+  margin: 0 auto;
+  border: solid 1px black;
+  background-color: #c4dbee;
+}
+
+#inner {
+  margin: 10px;
+}
+
+#header {
+  margin-bottom: 10px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+#menu {
+  margin-bottom: 10px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+#largeWrap {
+  width: 760px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  background-color: red
+}
+
+#leftWrap {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+#sideWrap {
+  border: solid 1px black;
+  width: 250px;
+  background-color: green;
+}
+
+.sideWrapFlexBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+#sideWrapInner {
+  margin: 10px;
+}
+
+.firstWrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border: solid 1px black;
+  background-color: green
+}
+
+.box1 {
+  border: solid 1px black;
+  width: 102.5px;
+  margin: 10px;
+  background-color: white;
+}
+
+.secondWrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+
+
+.box2 {
+  border: solid 1px black;
+  width: 144px;
+  margin: 10px;
+  background-color: white;
+}
+
+.thirdWrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border: solid 1px black;
+  background-color: green;
+}
+
+.box3 {
+  border: solid 1px black;
+  width: 227px;
+  margin: 10px;
+  background-color: white;
+}
+
+.forthWrap {
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px black;
+  background-color: green;
+}
+
+.box4 {
+  border: solid 1px black;
+  width: 61px;
+  margin: 10px;
+  background-color: white;
+}
+
+.box5 {
+  border: solid 1px black;
+  width: 230px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.box6 {
+  border: solid 1px black;
+  width: 102px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.box7 {
+  border: solid 1px black;
+  width: 60.6px;
+  margin-bottom: 10px;
+  float: left;
+  background-color: white;
+}
+
+.box8 {
+  border: solid 1px black;
+  width: 230px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+#footer {
+  border: solid 1px black;
+  margin: 10px 0px;
+  background-color: green;
+}
+
+
+
+
+/*
+#wrap {
+width: 780px;
+margin: 0 auto;
+border: solid 1px black;
+background-color: #c4dbee;
+}
+
+#inner {
+padding: 10px 0px;
+margin: 10px;
+}
+
+#header {
+border: solid 1px black;
+background-color: green;
+margin: 10px 0px;
+}
+
+#menu {
+border: solid 1px black;
+margin: 10px 0px;
+background-color: green;
+}
+
+#largeWrap {
+width: 500px;
+float:left;
+}
+
+#sideWrap {
+border: solid 1px black;
+width: 250px;
+float: right;
+background-color: green;
+}
+
+.firstWrap {
+border: solid 1px black;
+background-color: green;
+margin: 10px 0;
+}
+
+.box1 {
+border: solid 1px black;
+width: 102.5px;
+margin: 10px;
+float: left;
+background-color: white;
+}
+
+.secondWrap {
+border: solid 1px black;
+background-color: green;
+margin: 10px 0;
+}
+
+.box2 {
+border: solid 1px black;
+width: 144px;
+margin: 10px;
+float: left;
+background-color: white;
+}
+
+.thirdWrap {
+border: solid 1px black;
+background-color: green;
+margin: 10px 0;
+}
+
+.box3 {
+border: solid 1px black;
+width: 227px;
+margin: 10px;
+float: left;
+background-color: white;
+}
+
+.forthWrap {
+border: solid 1px black;
+background-color: green;
+margin: 10px 0;
+}
+
+.box4 {
+border: solid 1px black;
+width: 61px;
+margin: 10px;
+float: left;
+background-color: white;
+}
+
+.box5 {
+border: solid 1px black;
+width: 230px;
+margin: 10px;
+background-color: white;
+}
+
+.box6 {
+border: solid 1px black;
+width: 102px;
+margin: 10px;
+float:left;
+background-color: white;
+}
+
+.box7 {
+border: solid 1px black;
+width: 60.6px;
+margin: 10px;
+float: left;
+background-color: white;
+}
+
+.box8 {
+border: solid 1px black;
+width: 230px;
+margin: 10px;
+background-color: white;
+}
+
+#footer {
+border: solid 1px black;
+margin: 10px 0px;
+background-color: green;
+}
+
+.clear {
+clear: both;
+}
+.clear hr {
+display: none;
+}*/

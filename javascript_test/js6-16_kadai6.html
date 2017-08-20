@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>6.回数未定の繰り返し処理(ループ処理)『 while文』の課題1</p>
+    <br>
+    <p>A君は1日に50km歩きます、ある日A君は日本一周12200kmの旅にでました、<br />7日に一回休むとして</p>
+    <p id="event">何日で日本一周できるでしょうか？</p>
+    <p id="answer">答え：</p>
+    <p id="yasumi"></p>
+
+
+    <script>
+    var aroundJa = 12200; //日本一周の距離
+    var days = 0; // かかった日数
+    var holidays = 0;
+    var distance = 50; // A君の歩いた距離
+    var event = document.getElementById("event");
+    var answer = document.getElementById("answer");
+    var yasumi = document.getElementById("yasumi");
+    event.addEventListener("click", function(){
+      while(distance <= aroundJa){
+        days += 1;
+        console.log(days +"日目");
+        if(days % 8 ==0){
+          console.log("休み");
+          holidays+=1;
+          continue;
+        }
+        aroundJa -= distance;
+        console.log("残り" + aroundJa + "km");
+      }
+      yasumi.innerHTML = "休んだ日数：" + holidays + "日";
+      answer.innerHTML = "答え：" + days + "日";
+    }, false);
+
+    </script>
+  </body>
+</html>

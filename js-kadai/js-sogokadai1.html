@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>javascript基礎の総合課題1</title>
+  </head>
+  <body>
+    <h2>(1)formで入力された日付の曜日を表示する</h2>
+
+    <input type="text" id="year" value=""/><label for="year">年</label>
+    <input type="text" id="month" value=""><label for="month">月</label>
+    <input type="text" id="date" value=""/><label for="date">日</label>
+    <br>
+    <input type="button" id="button" value="調べる"/><br>
+    結果:
+
+
+
+    <script>
+
+      document.getElementById("button").addEventListener("click", function(){
+        var year = document.getElementById("year").value; //年取得
+        var month = document.getElementById("month").value - 1; //0~11のため
+        var date = document.getElementById("date").value;
+        // console.log(year); //確認用
+        // console.log(month); //確認用
+        // console.log(date); //確認用
+
+        var d = new Date(year, month, date);
+        // console.log(d); //確認用
+        // d = d.setFullYear(year, month, date); //ミリ秒で返ってくる
+        var weekdays = ["日", "月", "火", "水", "木", "金", "土"];
+        var day = d.getDay();
+        // console.log(day); //確認用
+        document.body.appendChild(document.createElement("span")).textContent = weekdays[day] + "曜日です";
+
+      });
+
+
+    </script>
+  </body>
+</html>
