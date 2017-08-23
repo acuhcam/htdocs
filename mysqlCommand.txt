@@ -74,15 +74,11 @@ SHOW COLUMNS FROM practice.users_detail;
 
 SELECT * FROM practice.users;
 
-SELECT * FROM practice.users_detail;
-
 --------------------------------------------------------------------
 
 (6) usersテーブルからidが3の人のデータを呼び出す
 
 SELECT * FROM practice.users WHERE id = 3;
-
-SELECT * FROM practice.users_detail WHERE id = 3;
 
 --------------------------------------------------------------------
 
@@ -90,14 +86,11 @@ SELECT * FROM practice.users_detail WHERE id = 3;
 
 SELECT * FROM practice.users WHERE name LIKE '%D%';
 
-SELECT * FROM practice.users_detail WHERE name LIKE '%D%';
 --------------------------------------------------------------------
 
 (8) usersテーブルからloguin_idの値を全レコード分抜き出す
 
 SELECT login_id FROM practice.users;
-
-SELECT login_id FROM practice.users_detail;
 
 --------------------------------------------------------------------
 (9) users_ditailテーブルからageカラムが19から23の間の人のデータを呼び出す

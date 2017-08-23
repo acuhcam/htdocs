@@ -1,5 +1,7 @@
 <?php
 
+echo $_SERVER[‘REMOTE_ADDR’];
+
   // echo $_SERVER['SERVER_NAME']; //サーバー名がわかる関数
 
   //PDO接続する関数

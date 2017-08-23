@@ -1,6 +1,8 @@
 $(function(){
-  $("#button").click(function(){
+  $("#main").blur(function(){
     var main = $("#main").val();
-    $("#input1").val([main]);
+    console.log(main);
+    $("#input").val([main]);
+    
   });
 });
