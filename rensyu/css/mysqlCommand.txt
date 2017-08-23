@@ -1,0 +1,156 @@
+(1) practiceと言う名前のデータベースを作成する
+
+CREATE DATABASE practice;
+
+--------------------------------------------------------------------
+
+(2) practiceデータベースに下記のテーブルを作成する
+
+CREATE TABLE practice.users (
+  id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  login_id VARCHAR(512) NULL,
+  name VARCHAR(256) NULL,
+  password VARCHAR(256) NULL,
+  created_at TIMESTAMP NULL,
+  updated_at TIMESTAMP NULL,
+  deleted_at TIMESTAMP NULL
+);
+
+CREATE TABLE practice.users_detail (
+  id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  user_id INT(11) NULL,
+  age INT(11) NULL,
+  profile TEXT NULL,
+  birthplace VARCHAR(16) NULL,
+  height INT(11) NULL,
+  weight INT(11) NULL
+);
+
+--------------------------------------------------------------------
+
+(3) 各それぞれのテーブルに下記の値をレコード挿入する
+
+INSERT INTO practice.users (
+  login_id,
+  name,
+  password,
+  created_at
+) VALUES (
+  'a@mail.jp',
+  '従業員A',
+  11111111,
+  '2017-5-16'
+);
+
+INSERT INTO practice.users
+  (login_id, name, password, created_at)
+VALUES
+  ('b@mail.jp', '従業員B', 22222222, '2017-5-16'),
+  ('c@mail.jp', '従業員C', 33333333, '2017-5-16'),
+  ('d@mail.jp', '従業員D', 44444444, '2017-5-16'),
+  ('e@mail.jp', '従業員E', 55555555, '2017-5-16');
+
+
+INSERT INTO practice.users_detail
+  (user_id, age, profile, birthplace, height, weight)
+VALUES
+  (1, 18, '従業員Aです', '東京都', 165, 46),
+  (2, 20, '従業員Bです', '埼玉県', 175, 65),
+  (3, 22, '従業員Cです', '神奈川県', 180, 78),
+  (4, 24, '従業員Dです', '千葉県', 155, 42),
+  (5, 26, '従業員Eです', '茨城県', 160, 44);
+
+--------------------------------------------------------------------
+
+(4)usersテーブル, users_ditailテーブルの構造を表示しなさい
+
+SHOW COLUMNS FROM practice.users;
+
+SHOW COLUMNS FROM practice.users_detail;
+
+--------------------------------------------------------------------
+
+(5) usersテーブルからすべてのデータを呼び出す
+
+SELECT * FROM practice.users;
+
+SELECT * FROM practice.users_detail;
+
+--------------------------------------------------------------------
+
+(6) usersテーブルからidが3の人のデータを呼び出す
+
+SELECT * FROM practice.users WHERE id = 3;
+
+SELECT * FROM practice.users_detail WHERE id = 3;
+
+--------------------------------------------------------------------
+
+(7) usersテーブルからnameカラムにDが含まれている人のデータを呼び出す
+
+SELECT * FROM practice.users WHERE name LIKE '%D%';
+
+SELECT * FROM practice.users_detail WHERE name LIKE '%D%';
+--------------------------------------------------------------------
+
+(8) usersテーブルからloguin_idの値を全レコード分抜き出す
+
+SELECT login_id FROM practice.users;
+
+SELECT login_id FROM practice.users_detail;
+
+--------------------------------------------------------------------
+(9) users_ditailテーブルからageカラムが19から23の間の人のデータを呼び出す
+
+SELECT * FROM practice.users_detail WHERE age >=19 AND age<=23;
+
+--------------------------------------------------------------------
+(10) users_ditailテーブルのweightカラムの合計値を求めろ
+
+SELECT SUM(weight) FROM practice.users_detail;
+
+--------------------------------------------------------------------
+(11) users_ditailテーブルのheightカラムの平均値を求めろ
+
+SELECT SUM(height) / COUNT(*) FROM practice.users_detail;
+
+--------------------------------------------------------------------
+(12) users_ditailテーブルの全データをheight低い順にソートして呼び出す
+
+SELECT height FROM practice.users_detail GROUP BY height ASC;
+
+--------------------------------------------------------------------
+(13) usersテーブル, users_ditailテーブルをidカラム,user_idカラムを基に結合して呼び出す
+
+SELECT * FROM practice.users INNER JOIN practice.users_detail ON practice.users.id = practice.users_detail.user_id;
+
+--------------------------------------------------------------------
+(14) usersテーブルに次のレコードを追加
+
+INSERT INTO practice.users (login_id, name, password, created_at)
+VALUES ('f@mail.jp', '従業員F', 66666666, '2017-5-17');
+
+--------------------------------------------------------------------
+(15) users_ditailテーブルのageカラムのあとにbirthday(型DATE)カラムを追加する
+
+ALTER TABLE practice.users_detail ADD birthday DATE AFTER age;
+
+--------------------------------------------------------------------
+(16) usersテーブルからidが5の人のpasswordを99999999に更新する
+
+UPDATE practice.users SET password = 999999999 WHERE id = 5;
+
+--------------------------------------------------------------------
+(17) users_ditailテーブルのheightカラムが165以上の人のweightを50に更新する
+
+UPDATE practice.users_detail SET weight = 50 WHERE height >= 165;
+
+--------------------------------------------------------------------
+(18) users_ditailテーブルのbirthdayカラムの名前をbirthに変更する
+
+ALTER TABLE practice.users_detail CHANGE birthday birth DATE;
+
+--------------------------------------------------------------------
+(19) usersテーブルからpasswordカラムの値が22222222の人のレコードを削除
+
+DELETE FROM practice.users WHERE password = 22222222;
